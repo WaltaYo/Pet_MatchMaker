@@ -3,8 +3,7 @@
 - Pet Finder API - suggestions on where to find your pet after the quiz.
 - Pet FBI - for lost or found pets
 - Database of pet types 
-- User Login 
-- Email updater
+- Email results of the quiz and links. 
 - Pet rule API based on community
 - Tree setup: weighted questions lifestyle based, attention span, housing situation ect.
 - exotic pet stretch goals - funny - exotic pets. "do you hate your neighbors?"
