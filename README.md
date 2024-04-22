@@ -9,4 +9,5 @@
 - exotic pet stretch goals - funny - exotic pets. "do you hate your neighbors?"
 - Some AI involved a possibility for stretch goal
 - pet care instructions links and information of the pet
+- Section breaks in questions of "do you want to keep going or get your results now?"
   
