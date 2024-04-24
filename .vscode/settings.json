@@ -1,5 +1,9 @@
 {
     "cSpell.words": [
         "petmatchmaking"
-    ]
+    ],
+    "java.project.sourcePaths": [
+        "src"
+    ],
+    "java.project.referencedLibraries": []
 }

@@ -1,6 +1,5 @@
-package java.com.petmatchmaking;
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+package test.java.com.petmatchmaking;
+
 
 @SpringBootTest
 public class PetMatchmakingApplicationTests {
