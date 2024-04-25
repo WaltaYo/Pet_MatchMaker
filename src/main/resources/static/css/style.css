@@ -1,10 +1,24 @@
-*{
+body{
     background-color: #f4aaa4;
 }
-header{
-    text-decoration-color: #31393B;
+header h1{
+    color: #31393B;
+    text-align: center;
+    margin: 0;
+    
 
 }
-footerfragment{
-    text-decoration-color: chartreuse;
+img{
+    background-color:#31393B;
+}
+header nav{
+margin-top: 10px;
+}
+
+.footer{
+    color: #31393B; /* White text */
+    padding: 10px; /* Add some padding */
+    position: fixed; /* Fix the footer at the bottom of the page */
+    width: 100%; /* Full width */
+    bottom: 0;
 }
