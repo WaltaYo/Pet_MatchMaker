@@ -10,7 +10,7 @@ public class PetDto {
   
     private Long id;
     private PetTypeEnum petType;
-    private String petAge;
+
 
     /**
      * Default Constructor
@@ -26,7 +26,7 @@ public class PetDto {
     public PetDto(PetModel model) {
         this.id = model.getId();
         this.petType = model.getPetType();
-        this.petAge = model.getPetAge();
+       
     }
 
     /**
@@ -66,32 +66,13 @@ public class PetDto {
     }
 
     /**
-     * Method to get the pet age
-     * 
-     * @return pet age
-     */
-    public String getPetAge() {
-        return petAge;
-    }
-
-    /**
-     * Method to set the pet age
-     * 
-     * @param petAge pet age
-     */
-    public void setPetAge(String petAge) {
-        this.petAge = petAge;
-    }
-
-    /**
      * Method to convert the pet data transfer object to a pet model
      * 
      * @return a pet model
      */
     public PetModel convertToModel() {
         PetModel pet = new PetModel(
-                this.getPetType(),
-                this.getPetAge());
+                this.getPetType());
         return pet;
     }
 }

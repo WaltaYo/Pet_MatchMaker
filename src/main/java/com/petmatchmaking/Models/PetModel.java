@@ -17,8 +17,6 @@ public class PetModel {
     @Column(nullable = false)
     private PetTypeEnum petType;
 
-    @Column(length = 3, nullable = false)
-    private String petAge;
 
     /**
      * Default Constructor
@@ -30,12 +28,11 @@ public class PetModel {
      * Parameterized Constructor
      * 
      * @param petType pet type
-     * @param petAge current pet age
      * 
      */
-    public PetModel(PetTypeEnum petType, String petAge) {
+    public PetModel(PetTypeEnum petType) {
         this.petType = petType;
-        this.petAge = petAge;
+      
     }
 
     /**
@@ -56,21 +53,14 @@ public class PetModel {
         return petType;
     }
 
-    /**
-     * Method to get the pet age
-     * 
-     * @return pet age
-     */
-    public String getPetAge() {
-        return petAge;
-    }
+
 
     /**
      * Override method for toString
      */
     @Override
     public String toString() {
-        return "PetModel [id=" + id + ", petType=" + petType + ", petAge=" + petAge + "]";
+        return "PetModel [id=" + id + ", petType=" + petType + "]";
     }
 
     
