@@ -30,7 +30,7 @@ public class PetModel {
      * @param petType pet type
      * 
      */
-    public PetModel(PetTypeEnum petType) {
+    public PetModel(String petType) {
         this.petType = petType;
       
     }

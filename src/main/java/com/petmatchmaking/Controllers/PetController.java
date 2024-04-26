@@ -2,7 +2,6 @@ package com.petmatchmaking.Controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.stereotype.Controller;
 import com.petmatchmaking.Dtos.PetDto;
 import com.petmatchmaking.Models.PetModel;
 import com.petmatchmaking.Services.PetService;
