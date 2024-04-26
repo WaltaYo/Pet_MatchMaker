@@ -21,7 +21,7 @@ public class PetController {
     /**
      * Parameterized Constructor
      * 
-     * @param petService adopter services
+     * @param petService pet services
      */
     public PetController(PetService petService) {
         this.petService = petService;
