@@ -1,7 +1,7 @@
 package com.petmatchmaking.Controllers;
 
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.stereotype.Controller;
 import com.petmatchmaking.Dtos.PetDto;
 import com.petmatchmaking.Models.PetModel;
 import com.petmatchmaking.Services.PetService;
@@ -11,7 +11,7 @@ import jakarta.annotation.Resource;
 /**
  * Class that models the mapping of the pet table
  */
-@RestController
+@Controller
 @RequestMapping("/api/v1/pets/")
 public class PetController {
 

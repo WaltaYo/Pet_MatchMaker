@@ -1,16 +1,14 @@
 package com.petmatchmaking.Dtos;
 
-import com.petmatchmaking.Enums.PetTypeEnum;
 import com.petmatchmaking.Models.PetModel;
 
 /**
  * Class that models the pet model data transfer object
  */
 public class PetDto {
-  
+
     private Long id;
-    private PetTypeEnum petType;
-    private String petAge;
+    private String petType;
 
     /**
      * Default Constructor
@@ -26,7 +24,7 @@ public class PetDto {
     public PetDto(PetModel model) {
         this.id = model.getId();
         this.petType = model.getPetType();
-        this.petAge = model.getPetAge();
+
     }
 
     /**
@@ -52,7 +50,7 @@ public class PetDto {
      * 
      * @return pet type
      */
-    public PetTypeEnum getPetType() {
+    public String getPetType() {
         return petType;
     }
 
@@ -61,26 +59,8 @@ public class PetDto {
      * 
      * @param petType pet type
      */
-    public void setPetType(PetTypeEnum petType) {
+    public void setPetType(String petType) {
         this.petType = petType;
-    }
-
-    /**
-     * Method to get the pet age
-     * 
-     * @return pet age
-     */
-    public String getPetAge() {
-        return petAge;
-    }
-
-    /**
-     * Method to set the pet age
-     * 
-     * @param petAge pet age
-     */
-    public void setPetAge(String petAge) {
-        this.petAge = petAge;
     }
 
     /**
@@ -90,8 +70,7 @@ public class PetDto {
      */
     public PetModel convertToModel() {
         PetModel pet = new PetModel(
-                this.getPetType(),
-                this.getPetAge());
+                this.getPetType());
         return pet;
     }
 }
