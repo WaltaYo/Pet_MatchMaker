@@ -1,9 +1,12 @@
 package com.petmatchmaking.Controllers;
 
+import org.hibernate.mapping.Collection;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
+import java.util.*;
 import com.petmatchmaking.Dtos.QuestionDto;
+import com.petmatchmaking.Models.AnswerModel;
 import com.petmatchmaking.Models.QuestionModel;
 import com.petmatchmaking.Services.QuestionService;
 
@@ -15,7 +18,7 @@ import jakarta.annotation.Resource;
  * Class that models the mapping of the question table
  */
 @Controller
-@RequestMapping("/api/v1/questions/")
+@RequestMapping("/questions/")
 public class QuestionController {
 
     @Resource
@@ -48,10 +51,17 @@ public class QuestionController {
      * @return question
      */
     @GetMapping("{id}")
-    public QuestionDto getQuestion(@PathVariable Long id){
-        QuestionModel model = questionService.findById(id);
-        QuestionDto dto = new QuestionDto(model);
-        return dto;
+    public String getQuestion(@PathVariable Long id, Model model){
+        QuestionModel questionModel = questionService.findById(id);
+        String question=questionModel.getQuestion();
+        Iterable<AnswerModel> answers=questionModel.getAnswers();
+        // ArrayList<String> answersArray = new ArrayList<String>(); 
+        // for(
+        //     int i=0; i<Iterables.size(answers);
+        //     )
+        model.addAttribute("question", question);
+        model.addAttribute("answers", answers);
+        return "home/quiz";
     }
 
     /**
