@@ -7,5 +7,10 @@
         "src"
     ],
     "java.project.referencedLibraries": [],
+<<<<<<< HEAD
     "java.compile.nullAnalysis.mode": "automatic"
+=======
+    "java.compile.nullAnalysis.mode": "automatic",
+    "liveServer.settings.port": 5501
+>>>>>>> origin/HTML-Base-Code
 }
