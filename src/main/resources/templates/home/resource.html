@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" >
+    <title>Resource</title>
+</head>
+<body>
+    
+    <div th:replace="./fragments/headerfragment :: header"></div>
+<header>
+    <h1>Awesome Resources</h1>
+</header>
+<div class="resource-shelter">
+    <div class="resource-item">
+        <a class="https://www.petfinder.com/" href="#">Resource 1</a>
+    </div>
+    <div class="resource-shelter">
+        <a class="https://gigis.org/" href="#">Resource 2</a>
+    </div>
+    <div class="resource-shelter">
+        <a class="https://www.hud.gov/findshelter" href="#">Resource 3</a>
+    </div>
+
+    <div class="resource-Care">
+        <a class="https://www.thesprucepets.com/puppy-101-back-to-basics-4114144" href="#">Resource 3</a>
+    </div>
+
+    <div class="resource-Care">
+        <a class="https://www.wikihow.com/Take-Care-of-Your-Pet" href="#">Resource 3</a>
+    </div>
+    <div class="resource-Care">
+        <a class="https://www.hillspet.com/pet-care/routine-care/10-responsible-pet-care-tips?lightboxfired=true" href="#">Resource 3</a>
+    </div>
+    
+
+    
+</body>
+<div th:replace="./fragments/footerfragment :: footer"></div>
+</html>
