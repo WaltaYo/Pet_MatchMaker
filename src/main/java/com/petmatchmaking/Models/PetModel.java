@@ -45,6 +45,15 @@ public class PetModel {
     }
 
     /**
+     * Method to set the pet id  //TO BE DELETED LATERRRR
+     * 
+     * @param id pet id
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    /**
      * Method to get the pet type
      * 
      * @return pet type

@@ -68,8 +68,7 @@ public class AnswerDto {
      * @return an answer dto converted to an answer model
      */
     public AnswerModel convertToModel() {
-        AnswerModel answer = new AnswerModel(
-                id, this.getAnswer());
+        AnswerModel answer = new AnswerModel(this.getAnswer());
 
         return answer;
     }

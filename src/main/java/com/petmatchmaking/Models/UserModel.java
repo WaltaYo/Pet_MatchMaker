@@ -6,6 +6,8 @@ import jakarta.validation.constraints.Size;
 /**
  * Class that models the user
  */
+@Entity
+@Table(name = "t_Users")
 public class UserModel {
     @Id
     @GeneratedValue()

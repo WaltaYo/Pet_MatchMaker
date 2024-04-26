@@ -17,6 +17,8 @@ public class AnswerModel {
     @Column()
     private String answer;
 
+    @ManyToOne
+    private QuestionModel questionModel;
     /**
      * Default Constructor
      */
@@ -29,8 +31,7 @@ public class AnswerModel {
      * @param id
      * @param answer
      */
-    public AnswerModel(Long id, String answer) {
-        this.id = id;
+    public AnswerModel(String answer) {
         this.answer = answer;
     }
 
@@ -47,14 +48,14 @@ public class AnswerModel {
         return id;
     }
 
-    // /**
-    //  * Method to Set Id
-    //  * 
-    //  * @param id
-    //  */
-    // public void setId(Long id) {
-    //     id = id;
-    // }
+    /**
+     * Method to Set Id  //TO BE DELETED LATERRRR
+     * 
+     * @param id
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     /**
      * Method to Get Answer
@@ -65,6 +66,14 @@ public class AnswerModel {
         return answer;
     }
 
+    /**
+     * Method to set the question model
+     * 
+     * @param questionModel question model
+     */
+    public void  setQuestionModel(QuestionModel questionModel){
+        this.questionModel = questionModel;
+    }
     @Override
     public String toString() {
         return "AnswerModel [Id=" + id + ", answer=" + answer + "]";

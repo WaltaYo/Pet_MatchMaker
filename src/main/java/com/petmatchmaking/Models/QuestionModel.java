@@ -1,10 +1,8 @@
 package com.petmatchmaking.Models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import java.util.*;
+
+import jakarta.persistence.*;
 
 /**
  * Class that models the questions
@@ -19,6 +17,9 @@ public class QuestionModel {
     @Column(length = 900, nullable = false)
     private String question;
 
+    @OneToMany(mappedBy = "questionModel", cascade = CascadeType.ALL)
+    private Collection<AnswerModel> answers;
+
     /**
      * Default Constructor
      */
@@ -28,13 +29,11 @@ public class QuestionModel {
     /**
      * Parameterized Constructor
      * 
-     * @param id       question id
-     * 
      * @param question question string
      */
-    public QuestionModel(Long id, String question) {
-        this.id = id;
+    public QuestionModel(String question) {
         this.question = question;
+        this.answers = new ArrayList<>();
     }
 
     /**
@@ -49,20 +48,25 @@ public class QuestionModel {
     /**
      * Method to get question
      * 
-     * @return question id
+     * @return question
      */
     public String getQuestion() {
         return question;
     }
 
-    // /**
-    //  * Method to set id 
-    //  * 
-    //  * @param id id for this class
-    //  */
-    // public void setId(Long id) {
-    //     this.id = id;
-    // }
+    
+    public Collection<AnswerModel> getAnswers() {
+        return answers;
+    }
+
+    /**
+     * Method to set id   //TO BE DELETED LATERRRR
+     * 
+     * @param id id for this class
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     // /**
     //  * Method to set question
@@ -80,5 +84,4 @@ public class QuestionModel {
     public String toString() {
         return "QuestionModel [id=" + id + ", question=" + question + "]";
     }
-
 }

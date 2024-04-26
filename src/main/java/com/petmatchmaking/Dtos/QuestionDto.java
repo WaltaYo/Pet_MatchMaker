@@ -33,7 +33,6 @@ public class QuestionDto {
      */
     public QuestionModel convertToModel(){
         QuestionModel question = new QuestionModel(
-            this.getId(),
             this.getQuestion());
             return question;
     }
