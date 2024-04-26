@@ -55,23 +55,23 @@ public class QuestionModel {
         return question;
     }
 
-    /**
-     * Method to set id 
-     * 
-     * @param id id for this class
-     */
-    public void setId(Long id) {
-        this.id = id;
-    }
+    // /**
+    //  * Method to set id 
+    //  * 
+    //  * @param id id for this class
+    //  */
+    // public void setId(Long id) {
+    //     this.id = id;
+    // }
 
-    /**
-     * Method to set question
-     * 
-     * @param question
-     */
-    public void setQuestion(String question) {
-        this.question = question;
-    }
+    // /**
+    //  * Method to set question
+    //  * 
+    //  * @param question
+    //  */
+    // public void setQuestion(String question) {
+    //     this.question = question;
+    // }
 
     /**
      * Override method for toString
