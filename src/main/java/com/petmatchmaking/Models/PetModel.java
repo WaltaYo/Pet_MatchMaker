@@ -28,12 +28,11 @@ public class PetModel {
      * Parameterized Constructor
      * 
      * @param petType pet type
-
      * 
      */
-    public PetModel(String petType) {
+    public PetModel(PetTypeEnum petType) {
         this.petType = petType;
-     
+      
     }
 
     /**
@@ -53,8 +52,6 @@ public class PetModel {
     public String getPetType() {
         return petType;
     }
-
-
 
 
 
