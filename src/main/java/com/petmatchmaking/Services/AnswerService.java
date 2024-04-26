@@ -25,7 +25,7 @@ public class AnswerService {
      * 
      * @param answersRepository
      */
-    public AnswerService(AnswerRepository answersRepository) {
+    public AnswerService(AnswerRepository answerRepository) {
         this.answerRepository = answerRepository;
     }
 
@@ -35,7 +35,7 @@ public class AnswerService {
      * @return all answers 
      */
     public Iterable<AnswerModel> findAll() {
-        Iterable<AnswerModel> answers = new ArrayList();
+        Iterable<AnswerModel> answers = new ArrayList<>();
         try {
             answers = answerRepository.findAll();
         } catch (Exception ex) {

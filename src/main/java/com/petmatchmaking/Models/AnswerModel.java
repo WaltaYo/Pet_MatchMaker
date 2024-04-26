@@ -12,7 +12,7 @@ public class AnswerModel {
 
     @Id
     @GeneratedValue()
-    private Long Id;
+    private Long id;
 
     @Column()
     private String answer;
@@ -30,7 +30,7 @@ public class AnswerModel {
      * @param answer
      */
     public AnswerModel(Long id, String answer) {
-        Id = id;
+        this.id = id;
         this.answer = answer;
     }
 
@@ -44,17 +44,17 @@ public class AnswerModel {
      * @return answer id
      */
     public Long getId() {
-        return Id;
+        return id;
     }
 
-    /**
-     * Method to Set Id
-     * 
-     * @param id
-     */
-    public void setId(Long id) {
-        Id = id;
-    }
+    // /**
+    //  * Method to Set Id
+    //  * 
+    //  * @param id
+    //  */
+    // public void setId(Long id) {
+    //     id = id;
+    // }
 
     /**
      * Method to Get Answer
@@ -67,7 +67,7 @@ public class AnswerModel {
 
     @Override
     public String toString() {
-        return "AnswerModel [Id=" + Id + ", answer=" + answer + "]";
+        return "AnswerModel [Id=" + id + ", answer=" + answer + "]";
     }
 
 }
