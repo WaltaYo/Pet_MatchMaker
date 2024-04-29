@@ -6,23 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>
-        Question 1: 
-    </h1>
-    <p th:text="${question}"></p>
-    <table> 
-        <thead>
-            <tr>
-                <th>Pick all that apply</th>
-                <th>opt 1</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="answer : ${answers}"> 
-                <td><input type="checkbox"></td>
-                <td th:text="${answer.answer}"></td>
-            </tr>
-        </tbody>
-    </table>
+    
 </body>
 </html>
