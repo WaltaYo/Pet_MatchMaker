@@ -55,10 +55,6 @@ public class QuestionController {
         QuestionModel questionModel = questionService.findById(id);
         String question=questionModel.getQuestion();
         Iterable<AnswerModel> answers=questionModel.getAnswers();
-        // ArrayList<String> answersArray = new ArrayList<String>(); 
-        // for(
-        //     int i=0; i<Iterables.size(answers);
-        //     )
         model.addAttribute("question", question);
         model.addAttribute("answers", answers);
         return "home/quiz";
