@@ -17,6 +17,9 @@ public class QuestionModel {
     @Column(length = 900, nullable = false)
     private String question;
 
+    @Column(nullable = false)
+    private boolean manyAnswers = false;
+
     @OneToMany(mappedBy = "questionModel", cascade = CascadeType.ALL)
     private Collection<AnswerModel> answers;
 
@@ -31,7 +34,7 @@ public class QuestionModel {
      * 
      * @param question question string
      */
-    public QuestionModel(String question) {
+    public QuestionModel(String question, BREOKAEIRJEJRLKAJRLKEJ) { // I broke this to make sure to edit populator and methods
         this.question = question;
         this.answers = new ArrayList<>();
     }
