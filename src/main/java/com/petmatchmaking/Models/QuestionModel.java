@@ -34,7 +34,7 @@ public class QuestionModel {
      * 
      * @param question question string
      */
-    public QuestionModel(String question, BREOKAEIRJEJRLKAJRLKEJ) { // I broke this to make sure to edit populator and methods
+    public QuestionModel(String question, boolean manyAnswers) { 
         this.question = question;
         this.answers = new ArrayList<>();
     }
@@ -71,14 +71,9 @@ public class QuestionModel {
         this.id = id;
     }
 
-    // /**
-    //  * Method to set question
-    //  * 
-    //  * @param question
-    //  */
-    // public void setQuestion(String question) {
-    //     this.question = question;
-    // }
+    public boolean isManyAnswers() {
+        return manyAnswers;
+    }
 
     /**
      * Override method for toString

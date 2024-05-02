@@ -1,7 +1,5 @@
 package com.petmatchmaking.Models;
 
-import java.util.Collection;
-
 import jakarta.persistence.*;
 
 @Entity
@@ -30,9 +28,8 @@ public class RulebookModel {
     public RulebookModel() {
     }
 
-    public RulebookModel(Long answerId, boolean selected, int postiveScore, int negativeScore, PetModel pet) {
+    public RulebookModel(Long answerId, int postiveScore, int negativeScore, PetModel pet) {
         this.answerId = answerId;
-        this.selected = selected;
         this.postiveScore = postiveScore;
         this.negativeScore = negativeScore;
         this.pet = pet;
@@ -61,17 +58,6 @@ public class RulebookModel {
     public PetModel getPet() {
         return pet;
     }
-
-
-
-    // public ScoreboardModel assignScore(ScoreboardModel scoreboard){
-        
-    //     scoreboard.updatePetScore(score);
-        
-
-    //     return userScore;
-    // }
-
     
 }
 

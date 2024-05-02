@@ -9,6 +9,7 @@ public class QuestionDto {
      
     private Long id;
     private String question;
+    private boolean manyAnswers = false;
 
     /**
      * Default Constructor
@@ -24,6 +25,7 @@ public class QuestionDto {
     public QuestionDto(QuestionModel model) {
         this.id = model.getId();
         this.question = model.getQuestion();
+        this.manyAnswers = model.isManyAnswers();
     }
 
     /**
@@ -33,7 +35,7 @@ public class QuestionDto {
      */
     public QuestionModel convertToModel(){
         QuestionModel question = new QuestionModel(
-            this.getQuestion());
+            this.getQuestion(), this.isManyAnswers());
             return question;
     }
 
@@ -71,6 +73,14 @@ public class QuestionDto {
      */
     public void setQuestion(String question) {
         this.question = question;
+    }
+
+    public boolean isManyAnswers() {
+        return manyAnswers;
+    }
+
+    public void setManyAnswers(boolean manyAnswers) {
+        this.manyAnswers = manyAnswers;
     }
     
     

@@ -9,6 +9,7 @@ public class PetDto {
 
     private Long id;
     private String petType;
+    private int score;
 
     /**
      * Default Constructor
@@ -24,6 +25,7 @@ public class PetDto {
     public PetDto(PetModel model) {
         this.id = model.getId();
         this.petType = model.getPetType();
+        this.score = model.getScore();
         
     }
 
@@ -62,7 +64,16 @@ public class PetDto {
     public void setPetType(String petType) {
         this.petType = petType;
     }
+    public int getScore() {
+        return score;
+    }
 
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+
+    
     /**
      * Method to convert the pet data transfer object to a pet model
      * 
@@ -71,6 +82,9 @@ public class PetDto {
     public PetModel convertToModel() {
         PetModel pet = new PetModel(
                 this.getPetType());
+                pet.setScore(this.getScore());
         return pet;
     }
+
+    
 }

@@ -1,9 +1,6 @@
 package com.petmatchmaking.Models;
 
 
-
-import java.util.Collection;
-
 import jakarta.persistence.*;
 
 /**
@@ -22,10 +19,6 @@ public class PetModel {
     @Column(length = 3, nullable = false)
     private int score = 10;
 
-    // @OneToMany(mappedBy = "rulebookModel", cascade = CascadeType.ALL)
-    // private Collection<RulebookModel> rulebooks;
-
-
     /**
      * Default Constructor
      */
@@ -38,10 +31,8 @@ public class PetModel {
      * @param petType pet type
      * 
      */
-    public PetModel(String petType, int score) {
-        this.petType = petType;
-        this.score = score;
-      
+    public PetModel(String petType) {
+        this.petType = petType;      
     }
 
     /**

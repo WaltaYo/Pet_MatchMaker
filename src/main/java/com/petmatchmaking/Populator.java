@@ -35,7 +35,7 @@ public class Populator implements CommandLineRunner{
     
     @Override
     public void run(String... args) throws Exception {
-        QuestionModel questionModel = new QuestionModel("Are you allergic to any of the following?");
+        QuestionModel questionModel = new QuestionModel("Are you allergic to any of the following?", true);
         questionModel.setId(1l);
         questionService.saveQuestion(questionModel);
 
@@ -74,7 +74,7 @@ public class Populator implements CommandLineRunner{
         answerModel7.setQuestionModel(questionModel);
         answerService.saveAnswer(answerModel7);
 
-        QuestionModel questionModel2 = new QuestionModel("What kind of domicile does thoust reside ith?");
+        QuestionModel questionModel2 = new QuestionModel("What kind of domicile does thoust reside ith?", false);
         questionModel2.setId(2l);
         questionService.saveQuestion(questionModel2);
 
