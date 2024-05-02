@@ -2,6 +2,8 @@ package com.petmatchmaking.Models;
 
 import java.util.*;
 
+import com.petmatchmaking.Dtos.PetDto;
+
 import jakarta.persistence.*;
 @Entity
 @Table(name = "t_Scoreboards")
@@ -13,7 +15,7 @@ public class ScoreboardModel {
     @OneToOne(mappedBy = "userModel", cascade = CascadeType.ALL)
     private UserModel user;
 
-    private ArrayList<PetModel> pets;
+    private ArrayList<PetDto> pets;
 
     public ScoreboardModel() {
     }

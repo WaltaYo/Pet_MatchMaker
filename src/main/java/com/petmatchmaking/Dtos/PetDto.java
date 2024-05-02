@@ -71,8 +71,6 @@ public class PetDto {
     public void setScore(int score) {
         this.score = score;
     }
-
-
     
     /**
      * Method to convert the pet data transfer object to a pet model

@@ -18,6 +18,9 @@ public class QuestionModel {
     private String question;
 
     @Column(nullable = false)
+    private Double questionOrder = 1.0;
+
+    @Column(nullable = false)
     private boolean manyAnswers = false;
 
     @OneToMany(mappedBy = "questionModel", cascade = CascadeType.ALL)
@@ -57,7 +60,11 @@ public class QuestionModel {
         return question;
     }
 
-    
+    /**
+     * Method to get the collection of answers
+     * 
+     * @return collection of answers
+     */
     public Collection<AnswerModel> getAnswers() {
         return answers;
     }
@@ -71,8 +78,21 @@ public class QuestionModel {
         this.id = id;
     }
 
+    /**
+     * Method to get if the question has multiple answers
+     * 
+     * @return if the question has multiple answers
+     */
     public boolean isManyAnswers() {
         return manyAnswers;
+    }
+
+    public Double getQuestionOrder() {
+        return questionOrder;
+    }
+
+    public void setQuestionOrder(Double questionOrder) {
+        this.questionOrder = questionOrder;
     }
 
     /**
