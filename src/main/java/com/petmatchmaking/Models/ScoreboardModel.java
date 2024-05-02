@@ -34,7 +34,7 @@ public class ScoreboardModel {
         return user;
     }
 
-    public ArrayList<PetModel> getPets() {
+    public UserModel getPets() {
         return pets;
     }
 
