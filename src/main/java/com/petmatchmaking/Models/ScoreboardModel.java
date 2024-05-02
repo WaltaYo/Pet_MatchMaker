@@ -12,10 +12,13 @@ public class ScoreboardModel {
     @GeneratedValue
     private Long id;
 
-    @OneToOne(mappedBy = "userModel", cascade = CascadeType.ALL)
+    @ManyToOne
     private UserModel user;
 
-    private ArrayList<PetDto> pets;
+    @OneToOne(mappedBy = "petModel")
+    private PetModel pet;
+
+    private int score;
 
     public ScoreboardModel() {
     }
@@ -23,9 +26,10 @@ public class ScoreboardModel {
     /**
      * gives us 1 user w/ array of pet types
      */
-    public ScoreboardModel(UserModel user, ArrayList<PetModel> pets) {
-        this.user = user;
-        this.pets = pets;
+    public ScoreboardModel(UserModel user, PetModel pet ) {
+        this.user = user;     
+        this.pet = pet;
+        this.score = pet.getDefaultScore();
     }
 
     public Long getId() {
@@ -36,10 +40,17 @@ public class ScoreboardModel {
         return user;
     }
 
-    public UserModel getPets() {
-        return pets;
+    public int getScore() {
+        return score;
     }
 
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public PetModel getPet() {
+        return pet;
+    }
     
 }
 

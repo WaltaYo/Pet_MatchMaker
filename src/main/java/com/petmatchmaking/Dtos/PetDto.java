@@ -25,7 +25,7 @@ public class PetDto {
     public PetDto(PetModel model) {
         this.id = model.getId();
         this.petType = model.getPetType();
-        this.score = model.getScore();
+      //  this.score = model.getScore();
         
     }
 

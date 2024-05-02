@@ -1,7 +1,8 @@
 package com.petmatchmaking.Dtos;
 
+import com.petmatchmaking.Models.PetModel;
 import com.petmatchmaking.Models.UserModel;
-
+import java.util.*;
 /**
  * Class that models the user model data transfer object
  */
@@ -126,8 +127,8 @@ public class UserDto {
      * 
      * @return user model
      */
-    public UserModel convertToModel() {
-        UserModel user = new UserModel(this.getUserId(), this.getPassword(), this.getName(), this.getEmail());
+    public UserModel convertToModel(Collection<PetModel> pets) {
+        UserModel user = new UserModel(this.userId,this.password,this.name,this.email,pets);
         return user;
     }
 }

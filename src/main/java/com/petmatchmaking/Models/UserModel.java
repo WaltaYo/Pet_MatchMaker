@@ -1,5 +1,5 @@
 package com.petmatchmaking.Models;
-
+import java.util.*;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 
@@ -12,6 +12,9 @@ public class UserModel {
     @Id
     @GeneratedValue()
     private Long id;
+
+    @OneToMany(mappedBy="user")
+    private ArrayList<ScoreboardModel> scoreBoard;
 
     @Column(length = 20, nullable = false)
     @Size(max = 20, min = 6)
@@ -42,11 +45,14 @@ public class UserModel {
      * @param email the user's email
      */
     public UserModel(String userId, String password, String name,
-            String email) {
+            String email, Collection<PetModel> pets) {
         this.userId = userId;
         this.password = password;
         this.name = name;
         this.email = email;
+        for(PetModel pet : pets){
+            this.scoreBoard.add(new ScoreboardModel(this,pet));
+        }
     }
 
     /**
