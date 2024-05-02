@@ -1,5 +1,9 @@
 package com.petmatchmaking.Dtos;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
+import com.petmatchmaking.Models.AnswerModel;
 import com.petmatchmaking.Models.QuestionModel;
 
 /**
@@ -10,6 +14,7 @@ public class QuestionDto {
     private Long id;
     private String question;
     private boolean manyAnswers = false;
+    private Collection<AnswerDto> answerDto;
 
     /**
      * Default Constructor
@@ -26,6 +31,7 @@ public class QuestionDto {
         this.id = model.getId();
         this.question = model.getQuestion();
         this.manyAnswers = model.isManyAnswers();
+        this.answerDto = convertToDto(model.getAnswers());
     }
 
     /**
@@ -75,15 +81,54 @@ public class QuestionDto {
         this.question = question;
     }
 
+    /**
+     * Method to get if the question has multiple answers
+     * 
+     * @return if the question has multiple answers
+     */
     public boolean isManyAnswers() {
         return manyAnswers;
     }
 
+    /**
+     * Method to Set if the question has multiple answers
+     * 
+     * @param manyAnswers if the question has multiple answers
+     */
     public void setManyAnswers(boolean manyAnswers) {
         this.manyAnswers = manyAnswers;
     }
+
+    /**
+     * Method to get the collection of answers
+     * 
+     * @return collection of answers
+     */
+    public Collection<AnswerDto> getAnswerDto() {
+        return answerDto;
+    }
+
+    /**
+     * Method to set the collection of answers
+     * 
+     * @param answerDto collection of answers
+     */
+    public void setAnswerDto(Collection<AnswerDto> answerDto) {
+        this.answerDto = answerDto;
+    }    
     
-    
-    
-    
+    /**
+     * Method to convert a collection of answer models to answer data transfer objects
+     * 
+     * @param answerModels collection of answer models
+     * 
+     * @return collection of answer data transfer objects
+     */
+    private Collection<AnswerDto> convertToDto(Collection<AnswerModel> answerModels) {
+        Collection<AnswerDto> answerDtos = new ArrayList<AnswerDto>();
+        for (AnswerModel model : answerModels) {
+            answerDtos.add(new AnswerDto(model));
+        }
+        return answerDtos;
+    }
 }

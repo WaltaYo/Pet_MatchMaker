@@ -17,7 +17,7 @@ public class PetModel {
     private String petType;
 
     @Column(length = 3, nullable = false)
-    private int score = 10;
+    private int defaultScore = 10;
 
     /**
      * Default Constructor
@@ -62,13 +62,22 @@ public class PetModel {
         return petType;
     }
 
-    public int getScore() {
-        return score;
+    /**
+     * Method to get the score
+     * 
+     * @return score
+     */
+    public int getDefaultScore() {
+        return defaultScore;
     }
     
-
-    public void setScore(int score) {
-        this.score = score;
+    /**
+     * Method to set the score
+     * 
+     * @param score score
+     */
+    public void setScore(int defaultScore) {
+        this.defaultScore = defaultScore;
     }
 
     /**
@@ -76,6 +85,6 @@ public class PetModel {
      */
     @Override
     public String toString() {
-        return "PetModel [id=" + id + ", petType=" + petType + ", score=" + score + "]";
+        return "PetModel [id=" + id + ", petType=" + petType + ", score=" + defaultScore + "]";
     }
 }

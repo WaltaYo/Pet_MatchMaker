@@ -14,9 +14,6 @@ public class RulebookModel {
     private Long answerId;
 
     @Column
-    private boolean selected = false;
-
-    @Column
     private int postiveScore = 0;
 
     @Column
@@ -25,9 +22,15 @@ public class RulebookModel {
     @ManyToOne
     private PetModel pet;
 
+    /**
+     * constructor
+     */
     public RulebookModel() {
     }
 
+    /**
+     * parameterized instructor
+     */
     public RulebookModel(Long answerId, int postiveScore, int negativeScore, PetModel pet) {
         this.answerId = answerId;
         this.postiveScore = postiveScore;
@@ -35,29 +38,50 @@ public class RulebookModel {
         this.pet = pet;
     }
 
+    /**
+     * return id
+     */
+
     public Long getId() {
         return id;
     }
 
+    /**
+     * return answerId
+     */
     public Long getAnswerId() {
         return answerId;
     }
 
-    public boolean isSelected() {
-        return selected;
-    }
-
+    /**
+     * return positive score
+     */
     public int getPostiveScore() {
         return postiveScore;
     }
 
+    /**
+     * return negative score
+     */
     public int getNegativeScore() {
         return negativeScore;
     }
 
+    /**
+     * return petModel
+     */
+
     public PetModel getPet() {
         return pet;
     }
-    
-}
 
+    /**
+     * To string for pet model
+     */
+    @Override
+    public String toString() {
+        return "RulebookModel [id=" + id + ", answerId=" + answerId + ", postiveScore=" + postiveScore
+                + ", negativeScore=" + negativeScore + ", pet=" + pet + "]";
+    }
+
+}

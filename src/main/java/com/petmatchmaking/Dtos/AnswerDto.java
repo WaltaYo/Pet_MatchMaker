@@ -9,6 +9,7 @@ public class AnswerDto {
      */
     private Long id;
     private String answer;
+    private boolean selected = false;
 
     /**
      * blank constructor
@@ -63,14 +64,20 @@ public class AnswerDto {
     }
 
     /**
-     * Method to convert to answer Model
+     * Method to get if the answer was selected
      * 
-     * @return an answer dto converted to an answer model
+     * @return if the answer was selected
      */
-    public AnswerModel convertToModel() {
-        AnswerModel answer = new AnswerModel(this.getAnswer());
-
-        return answer;
+    public boolean isSelected() {
+        return selected;
     }
 
+    /**
+     * Method to set if the answer was selected
+     * 
+     * @param selected if the answer was selected
+     */
+    public void setSelected(boolean selected) {
+        this.selected = selected;
+    }
 }
