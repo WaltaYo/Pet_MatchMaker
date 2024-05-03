@@ -1,8 +1,6 @@
 package com.petmatchmaking.Models;
 
-import java.util.*;
 
-import com.petmatchmaking.Dtos.PetDto;
 
 import jakarta.persistence.*;
 @Entity
@@ -15,8 +13,10 @@ public class ScoreboardModel {
     @ManyToOne
     private UserModel user;
 
-    @OneToOne(mappedBy = "petModel")
-    private PetModel pet;
+    private long petId;
+    private String petType;
+
+    
 
     private int score;
 
@@ -27,9 +27,11 @@ public class ScoreboardModel {
      * gives us 1 user w/ array of pet types
      */
     public ScoreboardModel(UserModel user, PetModel pet ) {
-        this.user = user;     
-        this.pet = pet;
-        this.score = pet.getDefaultScore();
+        this.user = user;   
+    
+         this.petId = pet.getId();
+         this.petType = pet.getPetType();
+         this.score = pet.getDefaultScore();
     }
 
     public Long getId() {
@@ -46,11 +48,15 @@ public class ScoreboardModel {
 
     public void setScore(int score) {
         this.score = score;
+    }  
+    public long getPetId() {
+        return petId;
     }
 
-    public PetModel getPet() {
-        return pet;
+    public String getPetType() {
+        return petType;
     }
+
     
 }
 

@@ -4,8 +4,9 @@ import java.util.*;
 
 import org.springframework.stereotype.Service;
 
+import com.petmatchmaking.Dtos.ScoreboardDto;
 import com.petmatchmaking.Models.ScoreboardModel;
-import com.petmatchmaking.Repositories.ScoreBoardRepository;
+import com.petmatchmaking.Repositories.ScoreboardRepository;
 
 import jakarta.annotation.Resource;
 
@@ -13,15 +14,15 @@ import jakarta.annotation.Resource;
  * Class that models the verification of the repository operations
  */
 @Service
-public class ScoreBoardService {
+public class ScoreboardService {
 
     @Resource
-    private ScoreBoardRepository scoreBoardRepository;
+    private ScoreboardRepository scoreBoardRepository;
 
     /**
      * Default Constructor
      */
-    public ScoreBoardService() {
+    public ScoreboardService() {
     }
 
     /**
@@ -29,7 +30,7 @@ public class ScoreBoardService {
      * 
      * @param scoreBoardRepository
      */
-    public ScoreBoardService(ScoreBoardRepository scoreBoardRepository) {
+    public ScoreboardService(ScoreboardRepository scoreBoardRepository) {
         this.scoreBoardRepository = scoreBoardRepository;
     }
 
@@ -38,16 +39,30 @@ public class ScoreBoardService {
      * 
      * @return score board
      */
-    public Iterable<ScoreboardModel> findAll() {
+    public Iterable<ScoreboardDto> findAllByUserId(Long userId) {
         Iterable<ScoreboardModel> scoreBoard = new ArrayList<>();
         try {
-            scoreBoard = scoreBoardRepository.findAll();
+            scoreBoard = scoreBoardRepository.findByUserId(userId);
+            if(scoreBoard==null){
+               CreateScoreBoard(userId);
+               scoreBoard = scoreBoardRepository.findByUserId(userId);
+            }
         } catch (Exception ex) {
             throw ex;
         }
-        return scoreBoard;
+        ArrayList<ScoreboardDto> results = new ArrayList<ScoreboardDto>();
+        for(ScoreboardModel model : scoreBoard){
+            results.add(new ScoreboardDto(model));
+        }
+        return results;
     }
 
+    private void CreateScoreBoard(Long userId){
+        Iterable<ScoreboardModel> scoreboards = scoreBoardRepository.findforNewScoreboard(userId);
+        for(ScoreboardModel model : scoreboards){
+            saveScoreBoard(model);
+        }
+    }
     /**
      * Method to find score board by id
      * 

@@ -87,26 +87,6 @@ public class UserService {
     }
 
     /**
-     * Method to find users by user login password
-     * 
-     * @param userId user login password
-     * 
-     * @return the user model
-     */
-    public UserModel findByPassword(String password){
-        UserModel user = null;
-        try {
-            Optional<UserModel> optUser = userRepository.findByPassword(password);
-            if (optUser.isPresent()) {
-                user = optUser.get();
-            }
-        } catch (Exception ex) {
-            throw ex;
-        }
-        return user;
-    }
-
-    /**
      * Method to find users by user email
      * 
      * @param email user email

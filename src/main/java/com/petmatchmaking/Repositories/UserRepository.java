@@ -20,14 +20,16 @@ public interface UserRepository extends CrudRepository<UserModel, Long>{
      */
     Optional<UserModel> findByUserId(String userId);
 
-    /**
-     * Method to find a user model by the user's login password
-     * 
-     * @param password user's login password
-     * 
-     * @return user model
-     */
-    Optional<UserModel> findByPassword(String password);
+
+    // do not need this
+    // /**
+    //  * Method to find a user model by the user's login password
+    //  * 
+    //  * @param password user's login password
+    //  * 
+    //  * @return user model
+    //  */
+    // Optional<UserModel> findByPassword(String password);
 
     /**
      * Method to find the user model by the user's email

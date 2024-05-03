@@ -30,11 +30,13 @@ public class UserModel {
     @Column(length = 50, nullable = false)
     private String email;
 
+    private int orderQuestion = 0;
     /**
      * Default Constructor
      */
     public UserModel() {
     }
+
 
     /**
      * Parameterized Constructor
@@ -45,15 +47,12 @@ public class UserModel {
      * @param email the user's email
      */
     public UserModel(String userId, String password, String name,
-            String email, Collection<PetModel> pets) {
+            String email) {
         this.userId = userId;
         this.password = password;
         this.name = name;
         this.email = email;
-        for(PetModel pet : pets){
-            this.scoreBoard.add(new ScoreboardModel(this,pet));
-        }
-    }
+     }
 
     /**
      * Method to get the user id
@@ -99,6 +98,14 @@ public class UserModel {
         return email;
     }
 
+    public ArrayList<ScoreboardModel> getScoreBoard() {
+        return scoreBoard;
+    }
+
+    public int getOrderQuestion() {
+        return orderQuestion;
+    }
+    
     /**
      * Override method for the toString
      */

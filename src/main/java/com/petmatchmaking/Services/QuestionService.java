@@ -1,10 +1,12 @@
 package com.petmatchmaking.Services;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import com.petmatchmaking.Dtos.QuestionDto;
 import com.petmatchmaking.Models.QuestionModel;
 import com.petmatchmaking.Repositories.QuestionRepository;
 
@@ -39,6 +41,22 @@ public class QuestionService {
      * 
      * @return All questions
      */
+    public Iterable<QuestionDto> findAllDtos() {
+        ArrayList<QuestionModel> questions = new ArrayList<>();
+        ArrayList<QuestionDto> dtos = new ArrayList<>();
+        try {
+            ArrayList<QuestionModel> list = iterableToList(findAll());
+            Collections.sort(list,new QuestionComparable());
+            for(QuestionModel model : questions){
+                dtos.add(new QuestionDto(model));
+            }
+
+            } catch (Exception ex) {
+            throw ex;
+        }
+        return dtos;
+    }
+    
     public Iterable<QuestionModel> findAll() {
         Iterable<QuestionModel> questions = new ArrayList<>();
         try {
@@ -48,7 +66,7 @@ public class QuestionService {
         }
         return questions;
     }
-
+   
     /**
      * Method to find question by ID
      * 
@@ -104,6 +122,14 @@ public class QuestionService {
             throw ex;
         }
         return question;
+    }
+
+    public ArrayList<QuestionModel> iterableToList(Iterable<QuestionModel> iterable) {
+        ArrayList<QuestionModel> list = new ArrayList<>();
+        for (QuestionModel element : iterable) {
+            list.add(element);
+        }
+        return list;
     }
 
 }

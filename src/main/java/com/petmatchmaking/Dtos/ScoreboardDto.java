@@ -1,35 +1,50 @@
 package com.petmatchmaking.Dtos;
 
-import java.util.ArrayList;
-
-import org.hibernate.mapping.Collection;
-
-import com.petmatchmaking.Models.PetModel;
 import com.petmatchmaking.Models.ScoreboardModel;
-import com.petmatchmaking.Models.UserModel;
 
 public class ScoreboardDto {
-
-  
-    private int currentScore;
+    private Long id;
+    private long petId;
     private String petType;
+    private int score;
 
-    /**
-     * Parameterized Constructor
-     * 
-     * @param model Scoreboard Model
-     */
     public ScoreboardDto(ScoreboardModel model) {
-      this.currentScore = model.getScore();
-      this.petType = model.getPet().getPetType();
+        this.id = model.getId();
+        this.petId = model.getPetId();
+        this.petType = model.getPetType();
+        this.score = model.getScore();
     }
 
-    public int getCurrentScore() {
-        return currentScore;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public long getPetId() {
+        return petId;
+    }
+
+    public void setPetId(long petId) {
+        this.petId = petId;
     }
 
     public String getPetType() {
         return petType;
-    }   
+    }
+
+    public void setPetType(String petType) {
+        this.petType = petType;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
 
 }

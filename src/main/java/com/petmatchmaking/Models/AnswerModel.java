@@ -1,6 +1,6 @@
 package com.petmatchmaking.Models;
 
-import java.util.Collection;
+
 
 import jakarta.persistence.*;
 
@@ -15,6 +15,12 @@ public class AnswerModel {
     @Id
     @GeneratedValue()
     private Long id;
+    
+    @Column
+    private int postiveScore = 0;
+
+    @Column
+    private int negativeScore = 0;
 
     @Column()
     private String answer;
@@ -22,8 +28,8 @@ public class AnswerModel {
     @ManyToOne
     private QuestionModel questionModel;
 
-    @OneToMany(mappedBy = "rulebookModel", cascade = CascadeType.ALL)
-    private Collection <RulebookModel> rulebooks;
+    // @OneToMany(mappedBy = "rulebookModel", cascade = CascadeType.ALL)
+    // private Collection <RulebookModel> rulebooks;
 
     /**
      * Default Constructor
