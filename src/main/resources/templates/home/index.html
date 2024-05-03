@@ -1,23 +1,56 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
     <title>PetMatchMaker</title>
-</head>
-<body>
+  </head>
+
+  
+  <header>
+    <div class="bg-img">
+      <h1>Pet Match Maker</h1>
+      <div class="container">
+      <nav class="menu-content">
+        <ul class="navbar1">
+          <li><a href="/">Home</a></li>
+          <li><a th:href="@{/questions/1}">Quiz</a></li>
+          <li><a href="/resource">Resources</a></li>
+          <li><a href="/aboutus">About us</a></li>
+        </ul>
+      </nav>
+    </div>
+
+      <form action="/action_page.php" class="container" th:action="@{/l}" th:object="${loginUser}" method="post">
+        <h1>Login</h1>
+
+        <label for="email"><b>User Login</b></label>
+        <input type="text" placeholder="Enter Username" required />
+        <label>Password</label>
+        <input type="password" placeholder="Enter Password">
+
+        <button type="submit" class="btn">Login</button>
+              
+          <!-- need out add a log out button -->
+          <!--log out function-->
+      </form>
+      
+    </div>
     
-    <div th:replace="./fragments/headerfragment :: header"></div>
+  </header>
 
+  <body>
 
-
-
-
-
-
-
-    
-</body>
-<div th:replace="./fragments/footerfragment :: footer"></div>
+      <div class="body">
+        <!-- <button class="regbtn">Register new user</button> -->
+        <a th:href="@{/login}">
+          <button>Register New User</button>
+        </a>
+        
+        <button th:href="@{/questions/1}">Start Your Quiz!</button>
+      </div>
+    </div>
+  </body>
+  <div th:replace="./fragments/footerfragment :: footer"></div>
 </html>
