@@ -41,7 +41,7 @@ public class QuestionService {
      * 
      * @return All questions
      */
-    public Iterable<QuestionDto> findAllDtos() {
+    public ArrayList<QuestionDto> findAllDtos() {
         ArrayList<QuestionModel> questions = new ArrayList<>();
         ArrayList<QuestionDto> dtos = new ArrayList<>();
         try {

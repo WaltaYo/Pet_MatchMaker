@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import com.petmatchmaking.Dtos.ScoreboardDto;
 import com.petmatchmaking.Models.ScoreboardModel;
 import com.petmatchmaking.Repositories.ScoreboardRepository;
-
 import jakarta.annotation.Resource;
 
 /**
@@ -40,17 +39,21 @@ public class ScoreboardService {
      * @return score board
      */
     public Iterable<ScoreboardDto> findAllByUserId(Long userId) {
-        Iterable<ScoreboardModel> scoreBoard = new ArrayList<>();
+        Collection<ScoreboardModel> scoreBoard = new ArrayList<>();
+      
         try {
             scoreBoard = scoreBoardRepository.findByUserId(userId);
             if(scoreBoard==null){
                CreateScoreBoard(userId);
                scoreBoard = scoreBoardRepository.findByUserId(userId);
             }
+           ArrayList<ScoreboardModel> list = iterableToList(scoreBoard);
+            Collections.sort(list, new ScoreboardCompare());
         } catch (Exception ex) {
             throw ex;
         }
         ArrayList<ScoreboardDto> results = new ArrayList<ScoreboardDto>();
+
         for(ScoreboardModel model : scoreBoard){
             results.add(new ScoreboardDto(model));
         }
@@ -58,10 +61,10 @@ public class ScoreboardService {
     }
 
     private void CreateScoreBoard(Long userId){
-        Iterable<ScoreboardModel> scoreboards = scoreBoardRepository.findforNewScoreboard(userId);
-        for(ScoreboardModel model : scoreboards){
-            saveScoreBoard(model);
-        }
+      //  Iterable<ScoreboardModel> scoreboards = scoreBoardRepository.findforNewScoreboard(userId);
+        // for(ScoreboardModel model : scoreboards){
+        //     saveScoreBoard(model);
+        // }
     }
     /**
      * Method to find score board by id
@@ -120,5 +123,11 @@ public class ScoreboardService {
         return scoreBoard;
     }
 
-
+ public ArrayList<ScoreboardModel> iterableToList(Iterable<ScoreboardModel> iterable) {
+        ArrayList<ScoreboardModel> list = new ArrayList<>();
+        for (ScoreboardModel element : iterable) {
+            list.add(element);
+        }
+        return list;
+    }
 }

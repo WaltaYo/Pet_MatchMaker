@@ -11,6 +11,7 @@ public class AnswerDto {
     private String answer;
     private boolean selected = false;
 
+
     /**
      * blank constructor
      */

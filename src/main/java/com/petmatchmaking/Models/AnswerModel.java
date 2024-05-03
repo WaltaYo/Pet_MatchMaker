@@ -27,13 +27,8 @@ public class AnswerModel {
 
     @ManyToOne
     private QuestionModel questionModel;
-
-    // @OneToMany(mappedBy = "rulebookModel", cascade = CascadeType.ALL)
-    // private Collection <RulebookModel> rulebooks;
-
-    /**
-     * Default Constructor
-     */
+    private long scoreboardId;
+    
     public AnswerModel() {
     }
 
