@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" >
+    <link rel="stylesheet" type="text/css" th:href="@{/css/ResourceStyle.css}" >
     <title>Resource</title>
 </head>
 <body>
@@ -14,21 +14,22 @@
 </header>
 <div class="resource-shelter">
     <div class="resource-item">
-        <a th:href="@{https://www.petfinder.com/}" href="#">Pet Finder</a>
+        <a th:href="@{https://www.petfinder.com/}" target="_blank">
+            <img src="/Images/petfinder.png" alt="Petfinder">
+        </a>
     </div>
     <div class="resource-Care">
-        <a th:href="@{https://www.thesprucepets.com/}" href="#">The Spruce Pets</a>
-    </div>
-
-    <div class="resource-Care">
-        <a th:href="@{https://www.wikihow.com/Take-Care-of-Your-Pet/}" href="#">How to take care of your pet</a>
-    </div>
-    <div class="resource-Care">
-        <a class="https://www.hillspet.com/pet-care/routine-care/10-responsible-pet-care-tips?lightboxfired=true" href="#">Resource 3</a>
+        <a th:href="@{https://www.thesprucepets.com/}" target = "_blank"> <img src = "/Images/sprucepet.png" alt="Spruce Pets" ></a>
     </div>
     
+    <div class="resource-Care">
+        <a th:href="@{https://www.wikihow.com/Take-Care-of-Your-Pet/}" target ="_blank"> <img src = "\Images\wikihow.jpg" alt ="WikiHow"></a>
+    </div>
+    <div class="resource-Care">
+        <a th:href="@{https://www.hillspet.com/pet-care/routine-care/10-responsible-pet-care-tips?lightboxfired=true}" target="_blank"> <img src = "\Images\HillsLogo.webp" alt ="WikiHow"></a>
+    </div>
 
-    
 </body>
+
 <div th:replace="./fragments/footerfragment :: footer"></div>
 </html>
