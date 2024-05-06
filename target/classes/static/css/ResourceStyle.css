@@ -13,7 +13,7 @@
     --color6: #31393b;
     --color7: rgb(162, 159, 159);
   }
-
+/* main body  */
 body {
     background-color: var(--color1);
     display: flex;
@@ -37,17 +37,18 @@ body {
     margin: 0;
   }
   .footer {
+
     color: var(--color6);
     padding: 10px; /* Add some padding */
-    position: fixed; /* Fix the footer at the bottom of the page */
+    position: end  ; /* Fix the footer at the bottom of the page */
     width: 100%; /* Full width */
     bottom: 0;
   }
 
 /* contains all the link items  */
 .resource-shelter{
-    display: grid;
-    grid-template-columns: 50% 50%;
+    /* display: grid;
+    grid-template-columns: 50% 50%; */
     flex-direction: column;
     justify-content: space-around;
     margin-top: 20px;
@@ -73,4 +74,21 @@ body {
     width: 200px;
     height: 200px;
   }
-  
+  /* Moves the footer below the link items  */
+  .resourcesFooter{
+    display: flex;
+    justify-content: flex-end;
+  }
+  /* text nexts to link photos explaining what they do  */
+  p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px;
+  }
+
+/* may need to mess with this tomorrow to address what the screen looks like on phones etc.  */
+
+  /* @media screen and () {
+    
+  } */
