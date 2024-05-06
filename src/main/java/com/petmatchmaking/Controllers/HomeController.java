@@ -92,6 +92,11 @@ public class HomeController extends BaseController {
         return "home/resource";
     }
 
+    @GetMapping("/aboutus")
+    public String getAboutUs() {
+        return "home/aboutus";
+    }
+
     @GetMapping("/login")
     public String getLogin() {
         return "home/login";

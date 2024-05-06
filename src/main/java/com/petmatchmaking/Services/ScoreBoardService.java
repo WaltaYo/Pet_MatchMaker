@@ -74,7 +74,7 @@ public class ScoreboardService {
      * @return
      */
     public ScoreboardModel findById(Long id) {
-        ScoreboardModel scoreBoard = null;
+        ScoreboardModel scoreboard = null;
         try {
             Optional<ScoreboardModel> optScore = scoreboardRepository.findById(id);
             if (optScore.isPresent()) {
