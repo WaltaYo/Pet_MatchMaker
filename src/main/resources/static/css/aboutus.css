@@ -48,6 +48,14 @@ body {
     flex-direction: column;
     position: relative;
     min-height: 50vh;
+   
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+   
 }
 
 a:hover {
@@ -67,6 +75,14 @@ button {
     border-color: #0e0d0d;
 }
 
-div {
-    display: center;
+@media(max-width: 376px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 10px;
+        font-size: smaller;
+       
+    }
 }
+
