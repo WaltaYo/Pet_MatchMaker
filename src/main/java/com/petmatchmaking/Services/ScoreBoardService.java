@@ -16,7 +16,7 @@ import jakarta.annotation.Resource;
 public class ScoreboardService {
 
     @Resource
-    private ScoreboardRepository scoreBoardRepository;
+    private ScoreboardRepository scoreboardRepository;
 
     /**
      * Default Constructor
@@ -29,8 +29,8 @@ public class ScoreboardService {
      * 
      * @param scoreBoardRepository
      */
-    public ScoreboardService(ScoreboardRepository scoreBoardRepository) {
-        this.scoreBoardRepository = scoreBoardRepository;
+    public ScoreboardService(ScoreboardRepository scoreboardRepository) {
+        this.scoreboardRepository = scoreboardRepository;
     }
 
     /**
@@ -39,28 +39,28 @@ public class ScoreboardService {
      * @return score board
      */
     public Iterable<ScoreboardDto> findAllByUserId(Long userId) {
-        Collection<ScoreboardModel> scoreBoard = new ArrayList<>();
+        Collection<ScoreboardModel> scoreboard = new ArrayList<>();
       
         try {
-            scoreBoard = scoreBoardRepository.findByUserId(userId);
-            if(scoreBoard==null){
-               CreateScoreBoard(userId);
-               scoreBoard = scoreBoardRepository.findByUserId(userId);
+            scoreboard = scoreboardRepository.findByUserId(userId);
+            if(scoreboard==null){
+               CreateScoreboard(userId);
+               scoreboard = scoreboardRepository.findByUserId(userId);
             }
-           ArrayList<ScoreboardModel> list = iterableToList(scoreBoard);
+           ArrayList<ScoreboardModel> list = iterableToList(scoreboard);
             Collections.sort(list, new ScoreboardCompare());
         } catch (Exception ex) {
             throw ex;
         }
         ArrayList<ScoreboardDto> results = new ArrayList<ScoreboardDto>();
 
-        for(ScoreboardModel model : scoreBoard){
+        for(ScoreboardModel model : scoreboard){
             results.add(new ScoreboardDto(model));
         }
         return results;
     }
 
-    private void CreateScoreBoard(Long userId){
+    private void CreateScoreboard(Long userId){
       //  Iterable<ScoreboardModel> scoreboards = scoreBoardRepository.findforNewScoreboard(userId);
         // for(ScoreboardModel model : scoreboards){
         //     saveScoreBoard(model);
@@ -76,14 +76,14 @@ public class ScoreboardService {
     public ScoreboardModel findById(Long id) {
         ScoreboardModel scoreBoard = null;
         try {
-            Optional<ScoreboardModel> optScore = scoreBoardRepository.findById(id);
+            Optional<ScoreboardModel> optScore = scoreboardRepository.findById(id);
             if (optScore.isPresent()) {
-                scoreBoard = optScore.get();
+                scoreboard = optScore.get();
             }
         } catch (Exception ex) {
             throw ex;
         }
-        return scoreBoard;
+        return scoreboard;
     }
 
     /**
@@ -96,8 +96,8 @@ public class ScoreboardService {
     public boolean deleteScoreBoard(Long id) {
         boolean result = false;
         try {
-            scoreBoardRepository.deleteById(id);
-            Optional<ScoreboardModel> optScore = scoreBoardRepository.findById(id);
+            scoreboardRepository.deleteById(id);
+            Optional<ScoreboardModel> optScore = scoreboardRepository.findById(id);
             if (!optScore.isPresent()) {
                 result = true;
             }
@@ -114,13 +114,13 @@ public class ScoreboardService {
      * 
      * @return the added or updated score board 
      */
-    public ScoreboardModel saveScoreBoard(ScoreboardModel scoreBoard){
+    public ScoreboardModel saveScoreboard(ScoreboardModel scoreboard){
         try {
-          scoreBoard = scoreBoardRepository.save(scoreBoard);
+          scoreboard = scoreboardRepository.save(scoreboard);
         } catch (Exception ex) {
             throw ex;
         }
-        return scoreBoard;
+        return scoreboard;
     }
 
  public ArrayList<ScoreboardModel> iterableToList(Iterable<ScoreboardModel> iterable) {
