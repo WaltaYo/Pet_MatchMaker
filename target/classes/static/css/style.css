@@ -141,7 +141,7 @@ button:hover {
   padding: 16px 20px;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: auto;
   opacity: 0.9;
   box-shadow: #31393b;
 }
@@ -173,4 +173,23 @@ header h1 {
   max-width: 200px;
   padding: 50px;
   background-color: white;
+}
+
+.backhome{
+  margin-left: 100px;
+  background-color: rgb(221, 161, 139);
+  border-radius: 10px;
+  border-color: #0e0d0d;
+  
+}
+.backhome:hover{
+  margin-left: 100px;
+  background-color: rgb(221, 161, 139);
+  border-radius: 10px;
+  border-color: #0e0d0d;
+  
+}
+
+a:hover {
+ color: var(--color4);
 }
