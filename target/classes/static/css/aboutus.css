@@ -28,6 +28,14 @@
     background-size: cover;
 }
 
+img {
+    float: left;
+    margin: 5px;
+}
+div{
+    text-align:justify;
+}
+
 header h1 {
     color: var(--color4);
     text-align: center;
@@ -38,8 +46,6 @@ body {
     background-color: var(--color1);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     position: relative;
     min-height: 50vh;
 }
@@ -60,4 +66,7 @@ button {
     border-radius: 10px;
     border-color: #0e0d0d;
 }
-   
+
+div {
+    display: center;
+}
