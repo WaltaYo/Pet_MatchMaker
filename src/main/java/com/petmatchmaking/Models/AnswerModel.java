@@ -27,7 +27,6 @@ public class AnswerModel {
 
     @ManyToOne
     private QuestionModel questionModel;
-    private long scoreboardId;
     
     public AnswerModel() {
     }

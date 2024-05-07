@@ -13,12 +13,6 @@ public class QuestionModel {
     @Id
     @GeneratedValue
     private Long id;
-    
-    @Column
-    private int postiveScore = 0;
-
-    @Column
-    private int negativeScore = 0;
 
     @Column(length = 900, nullable = false)
     private String question;
