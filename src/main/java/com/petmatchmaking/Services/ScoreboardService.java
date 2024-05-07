@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.petmatchmaking.Dtos.ScoreboardDto;
 import com.petmatchmaking.Models.ScoreboardModel;
-import com.petmatchmaking.Repositories.ScoreBoardRepository;
+import com.petmatchmaking.Repositories.ScoreboardRepository;
 
 import jakarta.annotation.Resource;
 
@@ -17,7 +17,7 @@ import jakarta.annotation.Resource;
 public class ScoreboardService {
 
     @Resource
-    private ScoreBoardRepository scoreboardRepository;
+    private ScoreboardRepository scoreboardRepository;
 
     /**
      * Default Constructor
@@ -30,7 +30,7 @@ public class ScoreboardService {
      * 
      * @param scoreBoardRepository
      */
-    public ScoreboardService(ScoreBoardRepository scoreboardRepository) {
+    public ScoreboardService(ScoreboardRepository scoreboardRepository) {
         this.scoreboardRepository = scoreboardRepository;
     }
 
