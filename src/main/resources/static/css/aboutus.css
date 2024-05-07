@@ -75,6 +75,7 @@ button {
     border-color: #0e0d0d;
 }
 
+
 @media(max-width: 376px) {
     main {
         display: grid;
