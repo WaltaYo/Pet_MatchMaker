@@ -275,7 +275,7 @@ public class Populator implements CommandLineRunner {
         answerModel33.setQuestionModel(questionModel8);
         answerService.saveAnswer(answerModel33);
 
-        QuestionModel questionModel9 = new QuestionModel("What is your work vibe?", false);
+        QuestionModel questionModel9 = new QuestionModel("What kind of lifestyle do you maintain?", false);
         questionModel9.setId(9l);
         questionModel9.setQuestionOrder(9.0);
         questionService.saveQuestion(questionModel9);
@@ -330,7 +330,7 @@ public class Populator implements CommandLineRunner {
         answerModel41.setQuestionModel(questionModel11);
         answerService.saveAnswer(answerModel41);
 
-        QuestionModel questionModel12 = new QuestionModel("What size animal?", false);
+        QuestionModel questionModel12 = new QuestionModel("Social activity?", false);
         questionModel12.setId(12l);
         questionModel12.setQuestionOrder(12.0);
         questionService.saveQuestion(questionModel12);

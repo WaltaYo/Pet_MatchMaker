@@ -11,6 +11,8 @@
   --color6: #31393b;
   --color7: rgb(162, 159, 159);
 }
+
+/** nav bar for main page- same as all pages*/
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
 .navbar1 {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -77,6 +79,7 @@
   transform: translate(0%, 0%);
   opacity: 1;
 }
+
 /* background image and login panel */
 .bg-img {
   background-image: url("/images/petpaws.jpeg");
@@ -88,22 +91,30 @@
   -o-background-size: cover;
   background-size: cover;
 }
+
 /* Add styles to the form container */
-.container {
-  margin: 20px;
-  padding: 20px;
-  background-color: white;
+form.container{
+  max-height: 200px;
 }
+.container {
+
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+  
+}
+/* spacing and style for the main content */
 .main-content{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 4fr 1fr 1fr 1fr;
+  grid-template-rows: 2fr 1fr 1fr 1fr;
   grid-template-areas: 
     "left right"
     "paragraph paragraph"
     "leftB rightB"
     "footer footer";
 }
+/** this is for the login box on the index.html page */
 .container1 {
   grid-area: right;
   position: static;
@@ -114,9 +125,7 @@
   background-color: white;
 }
 
-  
-  
-  /* Full-width input fields */
+/** this is for the login box on the index.html page */
 input[type="text"],
 input[type="password"] {
   box-sizing: border-box;
@@ -132,6 +141,11 @@ input[type="password"]:focus {
   background-color: #ddd;
   outline: none;
 }
+/*all buttons the same color*/
+button{
+  background-color: #a5092d;
+ }
+ 
 /* Set a style for the submit button */
 .btn {
   background-color: var(--color4);
@@ -141,18 +155,25 @@ input[type="password"]:focus {
   cursor: pointer;
   width: 100%;
   opacity: 0.9;
-}
-.btn {
   opacity: 1;
   box-shadow: #31393b;
 }
 
-.startbtn{
+.btn:hover{
+  background-color: #79aed3;
+  width: 100%;
+}
+
+/*css for the Start Quiz button*/
+button.startbtn{
+  font-size: medium;
   grid-area: leftB;
   margin: 2em;
-  margin-left: 11%;
-  margin-right: 11%;
-  color: var(--color3);
+  margin-left: 35%;
+  margin-right: 50%;
+  width: 175px;
+  height: 100px;
+  color: white;
   border: none;
   cursor: pointer;
   opacity: 0.9;
@@ -160,31 +181,34 @@ input[type="password"]:focus {
   box-sizing: border-box;
 }
 
-.regbtn{
+/*style for the register new user button*/
+button.regbtn{
+  font-size: medium;
   grid-area: rightB;
   margin: 2em;
-  margin-left: 11%;
-  margin-right: 11%;
-  color: var(--color3);
+  margin-left: 50%;
+  margin-right: 50%;
+  width: 175px;
+  height: 100px;
+  color: white;
   border: none;
   cursor: pointer;
   opacity: 0.9;
   box-shadow: #31393b;
   box-sizing: border-box;
-  background-color: #a5092d;
+  
+ 
 }
-
-
+/*style for the hover on the buttons*/
 button:hover {
-  background-color: var(--color4);
-  color: var(--color3);
-  padding: 16px 20px;
+ background-color: #79aed3;
   border: none;
   cursor: pointer;
-  width: auto;
+  width: 175px;
   opacity: 0.9;
   box-shadow: #31393b;
 }
+/*css for the main body. spacing*/
 body {
   background-color: var(--color1);
   display: flex;
@@ -194,6 +218,7 @@ body {
   position: relative;
   min-height: 50vh;
 }
+/*styling for the h1 header*/
 header h1 {
   color: var(--color4);
   text-align: center;
@@ -208,22 +233,18 @@ header{
   display: flex;
   justify-content: center;
 }
+
+/*footer styling*/
 .footer {
+  position: fixed;
   grid-area: footer;
   color: var(--color6);
   padding: 10px; /* Add some padding */
   width: 100%; /* Full width */
   bottom: 0;
 }
-.create-box {
-  position: static;
-  right: 0;
-  margin: 50px;
-  max-width: 200px;
-  padding: 50px;
-  background-color: white;
-}
 
+/*back home button styling*/
 .backhome{
   margin-left: 100px;
   background-color: rgb(221, 161, 139);
@@ -238,7 +259,16 @@ header{
   border-color: #0e0d0d;
   
 }
+/* css style for the paragraph */
 
-a:hover {
- color: var(--color4);
+p.indextext{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: large;
+  margin-top: 5.5%;
+  margin-left: 20%;
+  margin-bottom: 5%;
+  background-color: white;
+  opacity:0.6;
 }
