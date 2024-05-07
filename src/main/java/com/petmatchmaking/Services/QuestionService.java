@@ -42,12 +42,12 @@ public class QuestionService {
      * @return All questions
      */
     public ArrayList<QuestionDto> findAllDtos() {
-        ArrayList<QuestionModel> questions = new ArrayList<>();
+        ArrayList<QuestionModel> list = new ArrayList<>();
         ArrayList<QuestionDto> dtos = new ArrayList<>();
         try {
-            ArrayList<QuestionModel> list = iterableToList(findAll());
+            list = iterableToList(findAll());
             Collections.sort(list,new QuestionComparable());
-            for(QuestionModel model : questions){
+            for(QuestionModel model : list){
                 dtos.add(new QuestionDto(model));
             }
 

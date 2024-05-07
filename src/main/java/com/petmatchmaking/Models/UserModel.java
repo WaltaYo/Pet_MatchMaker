@@ -13,8 +13,8 @@ public class UserModel {
     @GeneratedValue()
     private Long id;
 
-    @OneToMany(mappedBy="user")
-    private ArrayList<ScoreboardModel> scoreBoard;
+    // @OneToMany(mappedBy="user")
+    // private ArrayList<ScoreboardModel> scoreBoard;
 
     @Column(length = 20, nullable = false)
     @Size(max = 20, min = 6)
@@ -30,7 +30,7 @@ public class UserModel {
     @Column(length = 50, nullable = false)
     private String email;
 
-    private int orderQuestion = 0;
+    // private int orderQuestion = 0;
     /**
      * Default Constructor
      */
@@ -62,6 +62,11 @@ public class UserModel {
     public Long getId() {
         return id;
     }
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+
     /**
      * Method to get the user's login id
      * 
@@ -98,13 +103,13 @@ public class UserModel {
         return email;
     }
 
-    public ArrayList<ScoreboardModel> getScoreBoard() {
-        return scoreBoard;
-    }
+    // public ArrayList<ScoreboardModel> getScoreBoard() {
+    //     return scoreBoard;
+    // }
 
-    public int getOrderQuestion() {
-        return orderQuestion;
-    }
+    // public int getOrderQuestion() {
+    //     return orderQuestion;
+    // }
     
     /**
      * Override method for the toString

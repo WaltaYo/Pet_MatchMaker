@@ -52,12 +52,12 @@ public class UserDto {
      */
     public UserDto(UserModel model) {
         this.id = model.getId();
-        this.scoreBoard = model.getScoreBoard();
+        //this.scoreBoard = model.getScoreBoard();
         this.userId = model.getUserId();
         this.password = model.getPassword();
         this.name = model.getName();
         this.email = model.getEmail();
-        this.orderQuestion = model.getOrderQuestion();
+       // this.orderQuestion = model.getOrderQuestion();
     }
 
     /**

@@ -56,10 +56,11 @@ public class HomeController extends BaseController {
         return "home/index";
     }
 
-    @GetMapping("/quiz/")
+    @GetMapping("/quiz")
     public String getQuiz(Model model, HttpServletRequest request, HttpServletResponse response) {
-        if (isUserLoggedIn(request)) {
-            return "redirect:/createlogin";
+        //Checks user for a valid login
+        if (!isUserLoggedIn(request)) {
+            return "redirect:/login";
         }
         Integer questionOrder = 0;
         String order = getCookieValue("questionOrder", request);
@@ -114,6 +115,22 @@ public class HomeController extends BaseController {
         }
         return "redirect:/createlogin";
     }
+
+    @GetMapping("autologin")
+    public String autoLogin(HttpServletResponse response){
+        UserModel user = new UserModel("testing","testing","testing","testing");
+           user.setId(0l);
+           userService.saveUser(user);
+            Cookie userIdCookie = new Cookie("Id", user.getId().toString());
+            Cookie userNameCookie = new Cookie("username", user.getName());
+            response.addCookie(userNameCookie);
+            response.addCookie(userIdCookie);
+            return "redirect:/";
+    }
+    public String getMethodName(@RequestParam String param) {
+        return new String();
+    }
+    
 
     @GetMapping("/logout")
     public String logoutUser(HttpServletResponse response) {
