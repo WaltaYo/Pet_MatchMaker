@@ -1,102 +1,7 @@
+/* Header CSS, copy and paste to utilize in a new page.  */
 
-/* Resource page  */
+
 * {
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  }
-  /* color scheme*/
-  :root {
-    --color1: #f4aaa4;
-    --color2: #ec9f80;
-    --color3: #c49792;
-    --color4: #a5092d;
-    --color5: #79aed3;
-    --color6: #31393b;
-    --color7: rgb(162, 159, 159);
-  }
-/* main body  */
-body {
-    background-color: var(--color1);
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* position: relative;
-    min-height: 50vh; */
-  }
-  header h1 {
-    font-size: 80px;
-    color: var(--color4);
-    text-align: center;
-    margin: 0;
-  }
-
-  h2{
-    color: var(--color4);
-    text-align: center;
-    margin: 0;
-  }
-  .footer {
-
-    color: var(--color6);
-    padding: 10px; /* Add some padding */
-    position: end  ; /* Fix the footer at the bottom of the page */
-    width: 100%; /* Full width */
-    bottom: 0;
-  }
-
-/* contains all the link items  */
-.resource-shelter{
-    /* display: grid;
-    grid-template-columns: 50% 50%; */
-    flex-direction: column;
-    justify-content: space-around;
-    margin-top: 20px;
-
-  
-  }
-  /* contains the first link item, Kat had this seperate, im not sure why but didnt want to mess with it. */
-  .resource-item{
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-  
-  }
-  /* contains the last 3 links */
-  .resource-Care{
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-   
-  }
-  /* set the images for the links to the same size, also affected the logo at the bottom. need to revisit to see what size the group wants  */
-  img{
-    width: 200px;
-    height: 200px;
-  }
-  /* Moves the footer below the link items  */
-  .resourcesFooter{
-    display: flex;
-    justify-content: flex-end;
-  }
-  /* text nexts to link photos explaining what they do  */
-  p{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-left: 15px;
-  }
-
-/* may need to mess with this tomorrow to address what the screen looks like on phones etc.  */
-
-  /* @media screen and () {
-    
-  } */
-
-  /* posted to add header
-   */
-
-   * {
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   }
   /* color scheme*/
@@ -179,7 +84,8 @@ body {
   .bg-img {
     background-image: url("/images/petpaws.jpeg");
     background-size: contain;
-    height: 30vh;
+    /* Adjust height to make space for content below  */
+    height: 70vh;
     width: 99vw;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -201,12 +107,4 @@ body {
   
   h1{
     font-size: 4em;
-  }
-  
-  h2{
-      color: var(--color4);
-      text-align: center;
-      margin: 0;
-      font-size: 4em;
-    
   }

@@ -9,29 +9,49 @@
 <body>
     
     <div th:replace="./fragments/headerfragment :: header"></div>
-<header>
-    <h1>Awesome Resources</h1>
+    <!-- Commented out due to header tag being utilized -->
+<!-- <header>
+ 
+    
+    <div class="bg-img">
+        <h1>Pet Match Maker</h1>
+        <div class="container">
+        <nav class="menu-content">
+          <ul class="navbar1">
+            <li><a href="/">Home</a></li>
+            <li><a th:href="@{/quiz}">Quiz</a></li>
+            <li><a href="/resource">Resources</a></li>
+            <li><a href="/aboutus">About us</a></li>
+          </ul>
+        </nav>
+      </div>
 </header>
+ -->
+
+
+
+<!-- Paw joke lol -->
+<h2>Paw-esome Resources</h2>
 <div class="resource-shelter">
     <div class="resource-item">
         <a th:href="@{https://www.petfinder.com/}" target="_blank">
             <img src="/Images/petfinder.png" alt="Petfinder">
         </a>
-        <p>Pet care resource about stuff that helps pets fill this in later pppppppppp</p>
+        <p>Adoptable Pets </p>
     </div>
     <div class="resource-Care">
         <a th:href="@{https://www.thesprucepets.com/}" target = "_blank"> <img src = "/Images/sprucepet.png" alt="Spruce Pets" ></a>
-        <p>Pet care resource about stuff that helps pets fill this in later pppppppppp</p>
+        <p>Veterinarian approved pet care resources </p>
     </div>
     
     <div class="resource-Care">
         <a th:href="@{https://www.wikihow.com/Take-Care-of-Your-Pet/}" target ="_blank"> <img src = "\Images\wikihow.jpg" alt ="WikiHow"></a>
-        <p>Pet care resource about stuff that helps pets fill this in later pppppppppp</p>
+        <p>Easy to read how to care for pets. </p>
     </div>
     <div class="resource-Care">
         <a th:href="@{https://www.hillspet.com/pet-care/routine-care/10-responsible-pet-care-tips?lightboxfired=true}" target="_blank">
              <img src = "\Images\HillsLogo.webp" alt ="WikiHow"></a>
-             <p>Pet care resource about stuff that helps pets fill this in later pppppppppp</p>
+             <p>10 Responsible Pet Care Tips</p>
     </div>
 
 </body>
