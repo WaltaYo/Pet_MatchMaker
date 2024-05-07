@@ -17,7 +17,7 @@ public class AnswerModel {
     private Long id;
     
     @Column
-    private int postiveScore = 0;
+    private int positiveScore = 0;
 
     @Column
     private int negativeScore = 0;
@@ -80,6 +80,24 @@ public class AnswerModel {
     public void  setQuestionModel(QuestionModel questionModel){
         this.questionModel = questionModel;
     }
+
+    
+    public int getPositiveScore() {
+        return positiveScore;
+    }
+
+    public void setPositiveScore(int positiveScore) {
+        this.positiveScore = positiveScore;
+    }
+
+    public int getNegativeScore() {
+        return negativeScore;
+    }
+
+    public void setNegativeScore(int negativeScore) {
+        this.negativeScore = negativeScore;
+    }
+
     @Override
     public String toString() {
         return "AnswerModel [Id=" + id + ", answer=" + answer + "]";
