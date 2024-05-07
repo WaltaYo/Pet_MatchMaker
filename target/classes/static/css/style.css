@@ -178,7 +178,12 @@ input[type="password"]:focus {
 button:hover {
   background-color: var(--color4);
   color: var(--color3);
-  outline: 2px solid var(--color5);
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: auto;
+  opacity: 0.9;
+  box-shadow: #31393b;
 }
 body {
   background-color: var(--color1);
@@ -210,8 +215,30 @@ header{
   width: 100%; /* Full width */
   bottom: 0;
 }
+.create-box {
+  position: static;
+  right: 0;
+  margin: 50px;
+  max-width: 200px;
+  padding: 50px;
+  background-color: white;
+}
 
-p{
-  grid-area: paragraph;
+.backhome{
+  margin-left: 100px;
+  background-color: rgb(221, 161, 139);
+  border-radius: 10px;
+  border-color: #0e0d0d;
+  
+}
+.backhome:hover{
+  margin-left: 100px;
+  background-color: rgb(221, 161, 139);
+  border-radius: 10px;
+  border-color: #0e0d0d;
+  
+}
 
+a:hover {
+ color: var(--color4);
 }
