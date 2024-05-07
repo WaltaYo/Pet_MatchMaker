@@ -90,16 +90,36 @@
 }
 /* Add styles to the form container */
 .container {
-  position: static;
-  right: 0;
-  margin: 50px;
-  max-width: 200px;
-  padding: 50px;
+  margin: 20px;
+  padding: 20px;
   background-color: white;
 }
-/* Full-width input fields */
+.main-content{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 4fr 1fr 1fr 1fr;
+  grid-template-areas: 
+    "left right"
+    "paragraph paragraph"
+    "leftB rightB"
+    "footer footer";
+}
+.container1 {
+  grid-area: right;
+  position: static;
+  margin: 50px;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 75px;
+  background-color: white;
+}
+
+  
+  
+  /* Full-width input fields */
 input[type="text"],
 input[type="password"] {
+  box-sizing: border-box;
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -108,6 +128,7 @@ input[type="password"] {
 }
 input[type="text"]:focus,
 input[type="password"]:focus {
+  box-sizing: border-box;
   background-color: #ddd;
   outline: none;
 }
@@ -125,25 +146,39 @@ input[type="password"]:focus {
   opacity: 1;
   box-shadow: #31393b;
 }
-.regbtn:hover {
-  background-color: var(--color4);
+
+.startbtn{
+  grid-area: leftB;
+  margin: 2em;
+  margin-left: 11%;
+  margin-right: 11%;
   color: var(--color3);
-  padding: 16px 20px;
   border: none;
   cursor: pointer;
-  width: 100%;
   opacity: 0.9;
   box-shadow: #31393b;
+  box-sizing: border-box;
 }
+
+.regbtn{
+  grid-area: rightB;
+  margin: 2em;
+  margin-left: 11%;
+  margin-right: 11%;
+  color: var(--color3);
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+  box-shadow: #31393b;
+  box-sizing: border-box;
+  background-color: #a5092d;
+}
+
+
 button:hover {
   background-color: var(--color4);
   color: var(--color3);
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-  box-shadow: #31393b;
+  outline: 2px solid var(--color5);
 }
 body {
   background-color: var(--color1);
@@ -159,18 +194,24 @@ header h1 {
   text-align: center;
   margin: 0;
 }
+
+h1{
+  font-size: 4em;
+}
+
+header{
+  display: flex;
+  justify-content: center;
+}
 .footer {
+  grid-area: footer;
   color: var(--color6);
   padding: 10px; /* Add some padding */
-  position: fixed; /* Fix the footer at the bottom of the page */
   width: 100%; /* Full width */
   bottom: 0;
 }
-.create-box {
-  position: static;
-  right: 0;
-  margin: 50px;
-  max-width: 200px;
-  padding: 50px;
-  background-color: white;
+
+p{
+  grid-area: paragraph;
+
 }

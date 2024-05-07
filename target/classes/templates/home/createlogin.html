@@ -3,11 +3,23 @@
     <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/createlogin.css}" />
     <title>Login</title>
 </head>
 <body>
-    Create User Login
+    <div class="bg-img">
+        
+        <div class="container">
+        <nav class="menu-content">
+          <ul class="navbar1">
+            <li><a href="/">Home</a></li>
+            <li><a th:href="@{/questions/1}">Quiz</a></li>
+            <li><a href="/resource">Resources</a></li>
+            <li><a href="/aboutus">About us</a></li>
+          </ul>
+        </nav>
+      </div>
+      <h1>Create a User Login</h1>
 <div class="create-box">
     <form action="#" th:action="@{/login}" th:object="${loginUser}" method="post">
     <label>Enter your Name</label>
@@ -18,9 +30,18 @@
     <input type="text" placeholder="Username">
     <label>Choose a Unique Password</label>
     <input type="password" placeholder="Password">
-    <input type="button" value="Create Your Account">
-</div>
+    
+    <div class="ccbtn">Create Account</div>
+    <a th:href="@{/}">
+        <div class="ccbtn">Cancel</div>
+      </a>
 </form>
+
+
+
+
+</div>
+
 
 </body>
 </html>

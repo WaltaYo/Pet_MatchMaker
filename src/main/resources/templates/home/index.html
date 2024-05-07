@@ -21,8 +21,8 @@
         </ul>
       </nav>
     </div>
-
-      <form action="/action_page.php" class="container" th:action="@{/l}" th:object="${loginUser}" method="post">
+      <div class="main-content">
+      <form action="/action_page.php" class="container1" th:action="@{/l}" th:object="${loginUser}" method="post">
         <h1>Login</h1>
 
         <label for="email"><b>User Login</b></label>
@@ -34,8 +34,15 @@
               
           <!-- need out add a log out button -->
           <!--log out function-->
+
       </form>
-      
+      <p> Please take the quiz to find your perfect pet!</p>
+      <!-- <button class="regbtn">Register new user</button> -->
+      <a class="regbtn" th:href="@{/createlogin}">
+      <div class="regbtn" > Register New User</div>
+      </a>
+      <button class="startbtn" th:href="@{/questions/1}">Start Your Quiz!</button>
+    </div>
     </div>
     
   </header>
@@ -43,14 +50,12 @@
   <body>
 
       <div class="body">
-        <!-- <button class="regbtn">Register new user</button> -->
-        <a th:href="@{/login}">
-          <button>Register New User</button>
-        </a>
-        
-        <button th:href="@{/questions/1}">Start Your Quiz!</button>
+       
       </div>
+      
     </div>
+ 
   </body>
+  
   <div th:replace="./fragments/footerfragment :: footer"></div>
 </html>

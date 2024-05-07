@@ -59,7 +59,7 @@ public class HomeController extends BaseController {
     @GetMapping("/quiz/")
     public String getQuiz(Model model, HttpServletRequest request, HttpServletResponse response) {
         if (isUserLoggedIn(request)) {
-            return "redirect:/login";
+            return "redirect:/createlogin";
         }
         Integer questionOrder = 0;
         String order = getCookieValue("questionOrder", request);
@@ -92,12 +92,12 @@ public class HomeController extends BaseController {
         return "home/resource";
     }
 
-    @GetMapping("/login")
+    @GetMapping("/createlogin")
     public String getLogin() {
-        return "home/login";
+        return "home/createlogin";
     }
 
-    @PostMapping("/login")
+    @PostMapping("/createlogin")
     public String loginUser(@RequestParam String userId, @RequestParam String password, HttpServletResponse response) {
         UserModel user = userService.findByUserId(userId);
         if (user != null && password.equals(user.getPassword())) {
@@ -107,7 +107,7 @@ public class HomeController extends BaseController {
             response.addCookie(userIdCookie);
             return "redirect:/";
         }
-        return "redirect:/login";
+        return "redirect:/createlogin";
     }
 
     @GetMapping("/logout")
