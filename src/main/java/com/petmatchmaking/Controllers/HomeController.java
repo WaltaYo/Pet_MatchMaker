@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.petmatchmaking.Dtos.AnswerDto;
 import com.petmatchmaking.Dtos.QuestionDto;
 import com.petmatchmaking.Dtos.ScoreboardDto;
+import com.petmatchmaking.Models.AnswerModel;
 import com.petmatchmaking.Models.ScoreboardModel;
 import com.petmatchmaking.Models.UserModel;
 import com.petmatchmaking.Services.AnswerService;
@@ -82,7 +83,11 @@ public class HomeController extends BaseController {
     @PostMapping("/question")
     public String postMethodName(@RequestBody QuestionDto questions) {
         // for(AnswerDto dto : questions.getAnswerDto()){
-        //     ScoreboardModel score = scoreboardService.findById()
+        //     ScoreboardModel score = scoreboardService.findById(dto.getId());
+        //     AnswerModel model = answerService.findById(dto.getId());
+        //     if(dto.isSelected()){
+        //         score.setScore(score.getScore()+dto.);
+        //     }
         // }
         return "redirect:/quiz";
     }
