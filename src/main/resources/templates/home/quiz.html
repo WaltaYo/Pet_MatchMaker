@@ -25,11 +25,15 @@
             </tr>
         </thead>
         <tbody>
-            <form action="#" th:action="@{/question}" th:object="${answers}"method="post">
-            <tr th:each="answer : ${answers}">
+            <form action="#" th:action="@{/question}" th:object="${question}"method="post">
+            <tr th:each="answer, stat : ${question.answerDto}">
                 <td>
-                    <!-- <input type="checkbox" th:checked="*{answer.selected}" > -->
-                    <!-- <input type="text" th:field="*{selected}"> -->
+                    <input type="checkbox" 
+                    th:name="|answerDto[${stat.index}].id|"
+                    th.value="${answer.getId()}"
+                    th:checked="${answer.selected}">
+                  
+                    
                 </td>
                 <td th:text="${answer.answer}"></td>
              

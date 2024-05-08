@@ -14,7 +14,7 @@ public class QuestionDto {
     private Long id;
     private String question;
     private boolean manyAnswers = false;
-    private Collection<AnswerDto> answerDto;
+    private AnswerDto[] answerDto;
 
     /**
      * Default Constructor
@@ -31,7 +31,7 @@ public class QuestionDto {
         this.id = model.getId();
         this.question = model.getQuestion();
         this.manyAnswers = model.isManyAnswers();
-        this.answerDto = convertToDto(model.getAnswers());
+        this.answerDto =convertToDto(model.getAnswers());
     }
 
     /**
@@ -104,7 +104,7 @@ public class QuestionDto {
      * 
      * @return collection of answers
      */
-    public Collection<AnswerDto> getAnswerDto() {
+    public AnswerDto[] getAnswerDto() {
         return answerDto;
     }
 
@@ -113,7 +113,7 @@ public class QuestionDto {
      * 
      * @param answerDto collection of answers
      */
-    public void setAnswerDto(Collection<AnswerDto> answerDto) {
+    public void setAnswerDto(AnswerDto[] answerDto) {
         this.answerDto = answerDto;
     }    
     
@@ -124,10 +124,11 @@ public class QuestionDto {
      * 
      * @return collection of answer data transfer objects
      */
-    private Collection<AnswerDto> convertToDto(Collection<AnswerModel> answerModels) {
-        Collection<AnswerDto> answerDtos = new ArrayList<AnswerDto>();
+    private AnswerDto[] convertToDto(Collection<AnswerModel> answerModels) {
+        AnswerDto[] answerDtos = new AnswerDto[answerModels.size()];
+        int counter = 0;
         for (AnswerModel model : answerModels) {
-            answerDtos.add(new AnswerDto(model));
+            answerDtos[counter++]=new AnswerDto(model);
         }
         return answerDtos;
     }
