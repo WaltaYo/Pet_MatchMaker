@@ -83,13 +83,13 @@ public class HomeController extends BaseController {
 
     @PostMapping("/question")
     public String postMethodName(@ModelAttribute("question") QuestionDto questions) {
-      for(AnswerDto dto : questions.getAnswerDto()){
-        //     ScoreboardModel score = scoreboardService.findById(dto.getId());
-        //     AnswerModel model = answerService.findById(dto.getId());
-        //     if(dto.isSelected()){
-        //         score.setScore(score.getScore()+dto.);
-        //     }
-         }
+    //   for(AnswerDto dto : questions.getAnswerDto()){
+    //     //     ScoreboardModel score = scoreboardService.findById(dto.getId());
+    //     //     AnswerModel model = answerService.findById(dto.getId());
+    //     //     if(dto.isSelected()){
+    //     //         score.setScore(score.getScore()+dto.);
+    //     //     }
+    //      }
         return "redirect:/quiz";
     }
     

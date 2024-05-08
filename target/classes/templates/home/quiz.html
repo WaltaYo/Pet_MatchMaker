@@ -29,7 +29,7 @@
             <tr th:each="answer, stat : ${question.answerDto}">
                 <td>
                     <input type="checkbox" 
-                    th:name="|answerDto[${stat.index}].id|"
+                    th:name="|answerDto[${stat.index}].answer|"
                     th.value="${answer.getId()}"
                     th:checked="${answer.selected}">
                   
