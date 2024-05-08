@@ -1,0 +1,79 @@
+* {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+/* color scheme*/
+:root {
+    --color1: #f4aaa4;
+    --color2: #ec9f80;
+    --color3: #c49792;
+    --color4: #a5092d;
+    --color5: #79aed3;
+    --color6: #31393b;
+    --color7: rgb(162, 159, 159);
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+
+
+/* background image and login panel */
+.bg-img {
+    background-image: url("/images/petpaws.jpeg");
+    background-size: contain;
+    height: 70vh;
+    width: 99vw;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+ h1 {
+    color: var(--color4);
+    text-align: center;
+    margin: 0;
+}
+
+body {
+    background-color: var(--color1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 50vh;
+   
+}
+
+table {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-content: baseline;
+}
+
+button {
+    background-color: var(--color1);
+    color: var(--color3);
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: auto;
+    opacity: 0.9;
+    box-shadow: #31393b;
+    margin-left: 100px;
+    border-radius: 10px;
+    border-color: #0e0d0d;
+}
+
+
+@media(max-width: 376px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 10px;
+        font-size: smaller;
+       
+    }
+}
+
