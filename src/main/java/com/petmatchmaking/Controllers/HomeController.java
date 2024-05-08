@@ -77,18 +77,19 @@ public class HomeController extends BaseController {
         ArrayList<QuestionDto> questions = questionService.findAllDtos();
         QuestionDto question = questions.get( (questionOrder-1));
         model.addAttribute("question", question);
+        model.addAttribute("answers", question.getAnswerDto());
         return "home/quiz";
     }
 
     @PostMapping("/question")
     public String postMethodName(@RequestBody QuestionDto questions) {
-        // for(AnswerDto dto : questions.getAnswerDto()){
+      for(AnswerDto dto : questions.getAnswerDto()){
         //     ScoreboardModel score = scoreboardService.findById(dto.getId());
         //     AnswerModel model = answerService.findById(dto.getId());
         //     if(dto.isSelected()){
         //         score.setScore(score.getScore()+dto.);
         //     }
-        // }
+         }
         return "redirect:/quiz";
     }
     
@@ -110,6 +111,7 @@ public class HomeController extends BaseController {
 
     @PostMapping("/createlogin")
     public String loginUser(@RequestParam String userId, @RequestParam String password, HttpServletResponse response) {
+        logout(response);
         UserModel user = userService.findByUserId(userId);
         if (user != null && password.equals(user.getPassword())) {
             Cookie userIdCookie = new Cookie("Id", user.getId().toString());
@@ -123,6 +125,7 @@ public class HomeController extends BaseController {
 
     @GetMapping("autologin")
     public String autoLogin(HttpServletResponse response){
+        logout(response);
         UserModel user = new UserModel("testing","testing","testing","testing");
            user.setId(0l);
            userService.saveUser(user);
@@ -139,12 +142,19 @@ public class HomeController extends BaseController {
 
     @GetMapping("/logout")
     public String logoutUser(HttpServletResponse response) {
+        logout(response);
+        return "redirect:/";
+    }
+
+    private void logout(HttpServletResponse response) {
         Cookie userIdCookie = new Cookie("Id", null);
         userIdCookie.setMaxAge(0);
         Cookie userNameCookie = new Cookie("username", null);
         userNameCookie.setMaxAge(0);
+       Cookie order = new Cookie("questionOrder", null);
+       order.setMaxAge(0);
         response.addCookie(userNameCookie);
         response.addCookie(userIdCookie);
-        return "redirect:/";
+        response.addCookie(order);
     }
 }
