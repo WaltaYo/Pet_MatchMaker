@@ -73,13 +73,20 @@ public class HomeController extends BaseController {
 
         Iterable<ScoreboardDto> score = scoreboardService.findAllByUserId(getUserId(request));
         model.addAttribute("scoreboard", score);
-        
+
         ArrayList<QuestionDto> questions = questionService.findAllDtos();
+        if(questionOrder >= (questions.size()-1)){
+            return "redirect:/result";
+        }
+        
+        // ArrayList<QuestionDto> questions = questionService.findAllDtos();
         QuestionDto question = questions.get( (questionOrder-1));
         model.addAttribute("question", question);
         model.addAttribute("answers", question.getAnswerDto());
         return "home/quiz";
     }
+
+
 
     @PostMapping("/question")
     public String postMethodName(@ModelAttribute("question") QuestionDto questions) {
@@ -93,6 +100,10 @@ public class HomeController extends BaseController {
         return "redirect:/quiz";
     }
     
+    @GetMapping("/result")
+    public String getResult(){
+        return "home/result";
+    }
 
     @GetMapping("/resource")
     public String getResource() {
