@@ -187,10 +187,33 @@ img {
   justify-content: flex-end;
 }
 
+#gifImage{
+  height: 50%;
+  width: 50%;
+}
 /* text nexts to link photos explaining what they do  */
 p {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding-left: 15px;
+}
+@keyframes rainbow {
+  0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+}
+
+
+#hiddenText, #hiddenText3 {
+  display: none;
+}
+
+#hiddenText2{
+  display: none;
+  font-size: 50px;
+  background-color: red;
+  animation-name: rainbow;
+  animation-duration: 4s;
 }
