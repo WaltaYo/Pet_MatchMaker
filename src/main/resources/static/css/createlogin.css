@@ -24,6 +24,7 @@
     box-sizing: border-box;
     -webkit-transition: all 0.35s ease;
     transition: all 0.35s ease;
+    background-color: white;
   }
   .navbar1 li {
     display: inline-block;
@@ -197,4 +198,14 @@
     padding: 20px;
     background-color: white;
     
+  }
+  @media(max-width: 376px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 10px;
+        font-size: smaller;
+       
+    }
   }

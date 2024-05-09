@@ -22,6 +22,7 @@
   text-transform: uppercase;
   font-weight: 500;
   letter-spacing: 1px;
+  background-color: white;
 }
 
 .navbar1 * {
@@ -29,6 +30,7 @@
   box-sizing: border-box;
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
+  background-color: white;
 }
 
 .navbar1 li {
@@ -102,12 +104,7 @@
   background-size: cover;
 }
 
-/* Add styles to the form container */
-.container {
-  margin: 20px;
-  padding: 20px;
-  background-color: white;
-}
+
 
 body {
   background-color: var(--color1);
@@ -193,4 +190,14 @@ p {
   justify-content: flex-start;
   align-items: center;
   padding-left: 15px;
+}
+@media(max-width: 376px) {
+  main {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 10px;
+      font-size: smaller;
+     
+  }
 }
