@@ -20,12 +20,14 @@
   text-transform: uppercase;
   font-weight: 500;
   letter-spacing: 1px;
+  background-color: white;
 }
 .navbar1 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
+  background-color: white;
 }
 .navbar1 li {
   display: inline-block;
@@ -96,13 +98,7 @@
 form.container{
   max-height: 200px;
 }
-.container {
 
-  margin: 10px;
-  padding: 10px;
-  background-color: white;
-  
-}
 /* spacing and style for the main content */
 .main-content{
   display: grid;
@@ -271,4 +267,14 @@ p.indextext{
   margin-bottom: 5%;
   background-color: white;
   opacity:0.6;
+}
+@media(max-width: 376px) {
+  main {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 10px;
+      font-size: smaller;
+     
+  }
 }
