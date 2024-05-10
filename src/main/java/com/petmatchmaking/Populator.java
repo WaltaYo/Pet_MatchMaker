@@ -78,61 +78,73 @@ public class Populator implements CommandLineRunner {
         answerModel.setId(1l);
         answerModel.setQuestionModel(questionModel);
         answerService.saveAnswer(answerModel);
+        answerModel.setNegativeScore(-1);
 
         AnswerModel answerModel2 = new AnswerModel("Cats");
         answerModel2.setId(2l);
         answerModel2.setQuestionModel(questionModel);
         answerService.saveAnswer(answerModel2);
+        answerModel.setPositiveScore(1);
 
         AnswerModel answerModel3 = new AnswerModel("Rodents");
         answerModel3.setId(3l);
         answerModel3.setQuestionModel(questionModel);
         answerService.saveAnswer(answerModel3);
+        answerModel.setPositiveScore(1);
 
         AnswerModel answerModel4 = new AnswerModel("Birds");
         answerModel4.setId(4l);
         answerModel4.setQuestionModel(questionModel);
         answerService.saveAnswer(answerModel4);
+        answerModel.setPositiveScore(1);
 
         AnswerModel answerModel5 = new AnswerModel("Reptiles");
         answerModel5.setId(5l);
         answerModel5.setQuestionModel(questionModel);
         answerService.saveAnswer(answerModel5);
+        answerModel.setPositiveScore(1);
 
         AnswerModel answerModel6 = new AnswerModel("Fish");
         answerModel6.setId(6l);
         answerModel6.setQuestionModel(questionModel);
         answerService.saveAnswer(answerModel6);
+        answerModel.setPositiveScore(1);
 
         AnswerModel answerModel7 = new AnswerModel("Farm Animals");
         answerModel7.setId(7l);
         answerModel7.setQuestionModel(questionModel);
         answerService.saveAnswer(answerModel7);
+        answerModel.setPositiveScore(1);
 
         AnswerModel answerModel8 = new AnswerModel("Amphibians");
         answerModel8.setId(8l);
         answerModel8.setQuestionModel(questionModel);
         answerService.saveAnswer(answerModel8);
+        answerModel.setPositiveScore(1);
 
         AnswerModel answerModel9 = new AnswerModel("Nope");
         answerModel9.setId(9l);
         answerModel9.setQuestionModel(questionModel);
         answerService.saveAnswer(answerModel9);
+        answerModel.setPositiveScore(1);
 
         AnswerModel answerModel10 = new AnswerModel("Everything");
         answerModel10.setId(10l);
         answerModel10.setQuestionModel(questionModel);
         answerService.saveAnswer(answerModel10);
+        answerModel.setPositiveScore(1);
 
         QuestionModel questionModel2 = new QuestionModel("What type of residence do you have?", false);
         questionModel2.setId(2l);
         questionModel2.setQuestionOrder(2.0);
         questionService.saveQuestion(questionModel2);
+        
 
         AnswerModel answerModel11 = new AnswerModel("House");
         answerModel11.setId(11l);
         answerModel11.setQuestionModel(questionModel2);
         answerService.saveAnswer(answerModel11);
+        answerModel.setPositiveScore(1);
 
         AnswerModel answerModel12 = new AnswerModel("Apartment");
         answerModel12.setId(12l);

@@ -178,4 +178,16 @@ public class HomeController extends BaseController {
         return "home/virtualpet";
     }
     
+    @GetMapping("login")
+    public String login(HttpServletResponse response){
+        logout(response);
+        UserModel user = userService.findByEmail("email");
+        if(user.getPassword().equals("password")){
+    
+     return "redirect:/quiz";
+        }
+        else{
+        return "home/index";
+        }
+    }
 }
