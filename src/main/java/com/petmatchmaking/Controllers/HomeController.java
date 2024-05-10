@@ -60,7 +60,11 @@ public class HomeController extends BaseController {
     }
 
     @GetMapping
-    public String getIndex() {
+    public String getIndex(Model model, HttpServletRequest request, HttpServletResponse response) {
+        model.addAttribute("isLoggedIn", isUserLoggedIn(request));
+        if (isUserLoggedIn(request)){
+            model.addAttribute("userId", getUserName(request));
+        }
         return "home/index";
     }
 
@@ -70,6 +74,7 @@ public class HomeController extends BaseController {
         if (!isUserLoggedIn(request)) {
             return "redirect:/login";
         }
+        model.addAttribute("isLoggedIn", isUserLoggedIn(request));
         Integer questionOrder = 0;
         String order = getCookieValue("questionOrder", request);
         if (order.length() > 0) {
