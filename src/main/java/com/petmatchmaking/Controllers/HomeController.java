@@ -1,13 +1,17 @@
 package com.petmatchmaking.Controllers;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.petmatchmaking.Dtos.AnswerDto;
 import com.petmatchmaking.Dtos.QuestionDto;
@@ -82,15 +86,22 @@ public class HomeController extends BaseController {
         
         // ArrayList<QuestionDto> questions = questionService.findAllDtos();
         QuestionDto question = questions.get( (questionOrder-1));
-        model.addAttribute("question", question);
-        model.addAttribute("answers", question.getAnswerDto());
+        Boolean[] answers = question.getAnswers();
+       
+       
+         model.addAttribute("question", question);
+         model.addAttribute("answers", answers);
+       
         return "home/quiz";
     }
 
 
 
     @PostMapping("/question")
-    public String postMethodName(@ModelAttribute("question") QuestionDto questions) {
+     public String postMethodName(@ModelAttribute("question") QuestionDto question, BindingResult result) {
+        if(question!=null){
+            var a = question;
+        }
     //   for(AnswerDto dto : questions.getAnswerDto()){
     //     //     ScoreboardModel score = scoreboardService.findById(dto.getId());
     //     //     AnswerModel model = answerService.findById(dto.getId());

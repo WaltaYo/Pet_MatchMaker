@@ -17,10 +17,10 @@ public class AnswerModel {
     private Long id;
     
     @Column
-    private int positiveScore = 0;
+    private int positiveScore = 1;
 
     @Column
-    private int negativeScore = 0;
+    private int negativeScore = -1;
 
     @Column()
     private String answer;
