@@ -36,13 +36,13 @@
       </nav>
     </div>
       <div class="main-content">
-      <form action="/action_page.php" class="container1" th:action="@{/l}" th:object="${loginUser}" method="post">
+      <form action="#" class="container1" th:action="@{/login}" th:object="${loginUser}" method="post">
         <h1>Login</h1>
-
-        <label for="email"><b>User Login</b></label>
-        <input type="text" placeholder="Enter Username" required />
+        <input type="hidden" th:field="*{id}" />
+        <label><b>User Login</b></label>
+        <input type="text" placeholder="Username" th:field="*{userId}">
         <label>Password</label>
-        <input type="password" placeholder="Enter Password">
+        <input type="text" placeholder="Password" th:field="*{password}">
 
         <button type="submit" class="btn">Login</button>
               

@@ -60,7 +60,7 @@ public class HomeController extends BaseController {
     }
 
     @GetMapping
-    public String getIndex(Model model, HttpServletRequest request, HttpServletResponse response) {
+    public String getIndex(@ModelAttribute("loginUser") UserDto login, Model model, HttpServletRequest request, HttpServletResponse response) {
         model.addAttribute("isLoggedIn", isUserLoggedIn(request));
         if (isUserLoggedIn(request)){
             model.addAttribute("userId", getUserName(request));
@@ -159,9 +159,7 @@ public class HomeController extends BaseController {
     @GetMapping("autologin")
     public String autoLogin(HttpServletResponse response){
         logout(response);
-        UserModel user = new UserModel("Visitor","testing","testing","testing");
-           user.setId(0l);
-           userService.saveUser(user);
+        UserModel user = userService.findById(1l);
             Cookie userIdCookie = new Cookie("Id", user.getId().toString());
             Cookie userNameCookie = new Cookie("username", user.getName());
             response.addCookie(userNameCookie);
@@ -197,19 +195,20 @@ public class HomeController extends BaseController {
     }
     
     @PostMapping("login")
-    public String login(HttpServletResponse response, @ModelAttribute("loginUser") UserDto login){
+    public String login(@ModelAttribute("loginUser") UserDto login, HttpServletResponse response){
         logout(response);
-        UserModel model = login.convertToModel();
-        String userName = model.getUserId();
-        String userPassword = model.getPassword();
-        if( userName != null && userPassword.equals(login.getPassword())){
-            Cookie userIdCookie = new Cookie("Id", model.getId().toString());
-            Cookie userNameCookie = new Cookie("username", model.getName());
+
+        String userName = login.getUserId();
+        String userPassword = login.getPassword();
+        UserModel userModel = userService.findByUserId(userName);
+
+        if( userModel.getUserId() != null && userModel.getPassword().equals(userPassword)){
+            Cookie userIdCookie = new Cookie("Id", userModel.getId().toString());
+            Cookie userNameCookie = new Cookie("username", userModel.getName());
             response.addCookie(userNameCookie);
             response.addCookie(userIdCookie);
             return "redirect:/";
         } else {
-            new ResponseStatusException(HttpStatus.NOT_FOUND, "User Name not found: " + userName);
             return "redirect:/login";
         }
  

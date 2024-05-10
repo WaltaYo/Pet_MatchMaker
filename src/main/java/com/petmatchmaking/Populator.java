@@ -392,9 +392,9 @@ public class Populator implements CommandLineRunner {
         answerModel48.setQuestionModel(questionModel14);
         answerService.saveAnswer(answerModel48);
 
-        UserModel userModel1 = new UserModel("wawawiwa", "hellohellothere", "Walta", "www@gmail.com");
-        userModel1.setId(1L);
-        userService.saveUser(userModel1);
+        UserModel userModel = new UserModel("Visitor", "password", "Visitor", "www@gmail.com");
+        userModel.setId(1L);
+        userService.saveUser(userModel);
 
     }
 }

@@ -66,6 +66,9 @@ public class UserDto {
      * @return user
      */
     public UserModel convertToModel() {
+        if (id == null) {
+            id = 0l;
+        }
         UserModel user = new UserModel(this.getUserId(), this.getPassword(),
                 this.getName(), this.getEmail());
         return user;
