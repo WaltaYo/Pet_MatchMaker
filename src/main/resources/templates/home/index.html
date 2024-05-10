@@ -5,12 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
     <title>PetMatchMaker</title>
-  </head>
 
+
+</head>
   
   <header>
     <div class="bg-img">
+      <div class="header-container">
       <h1>Pet Match Maker</h1>
+        <div class="loggedbox" th:if="${isLoggedIn}">
+        <p>Welcome</p>
+        <p th:text="${userId}"></p>
+        <a th:href="@{/logout}"><button class="logbtn">Log Out</button></a>
+          </div>
+      <div class="loggedbox" th:unless="${isLoggedIn}">
+        <p>Logged Out</p>
+      </div>
+    
+    </div>
       <div class="container">
       <nav class="menu-content">
         <ul class="navbar1">
@@ -71,6 +83,7 @@
 
       <a class="regbtn" th:href="@{/createlogin}"><button class="regbtn" >Register New User</button></a>
       <a class="startbtn" th:href="@{/quiz}"><button class="startbtn">Start Your Quiz!</button></a> 
+      
     </div>
     
     
@@ -83,14 +96,7 @@
       </div>
       
     </div>
- <!-- <p th:text="${isLoggedIn}"></p> -->
-    <div th:if="${isLoggedIn}">
-      <p>Logged In</p>
-      <p th:text="${userId}"></p>
-    </div>
-    <div th:unless="${isLoggedIn}">
-      <p>Logged Out</p>
-    </div>
+   
   </body>
   
   <div th:replace="./fragments/footerfragment :: footer"></div>

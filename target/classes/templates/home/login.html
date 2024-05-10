@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-content">
+        <form action="/action_page.php" class="container1" th:action="@{/l}" th:object="${loginUser}" method="post">
+          <h1>Login</h1>
+  
+          <label for="email"><b>User Login</b></label>
+          <input type="text" placeholder="Enter Username" required />
+          <label>Password</label>
+          <input type="password" placeholder="Enter Password">
+  
+          <button type="submit" class="btn">Login</button>
+                
+           
+  
+        </form>
+    </div>
+</body>
+</html>
