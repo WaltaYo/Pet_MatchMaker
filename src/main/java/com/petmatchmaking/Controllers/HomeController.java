@@ -159,7 +159,7 @@ public class HomeController extends BaseController {
     @GetMapping("autologin")
     public String autoLogin(HttpServletResponse response){
         logout(response);
-        UserModel user = new UserModel("testing","testing","testing","testing");
+        UserModel user = new UserModel("Visitor","testing","testing","testing");
            user.setId(0l);
            userService.saveUser(user);
             Cookie userIdCookie = new Cookie("Id", user.getId().toString());
