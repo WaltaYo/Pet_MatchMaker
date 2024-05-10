@@ -86,6 +86,7 @@
  <!-- <p th:text="${isLoggedIn}"></p> -->
     <div th:if="${isLoggedIn}">
       <p>Logged In</p>
+      <p th:text="${userId}"></p>
     </div>
     <div th:unless="${isLoggedIn}">
       <p>Logged Out</p>

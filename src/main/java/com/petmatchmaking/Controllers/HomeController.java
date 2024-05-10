@@ -56,6 +56,9 @@ public class HomeController extends BaseController {
     @GetMapping
     public String getIndex(Model model, HttpServletRequest request, HttpServletResponse response) {
         model.addAttribute("isLoggedIn", isUserLoggedIn(request));
+        if (isUserLoggedIn(request)){
+            model.addAttribute("userId", getUserName(request));
+        }
         return "home/index";
     }
 
