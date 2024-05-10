@@ -16,18 +16,14 @@ public class AnswerModel {
     @GeneratedValue()
     private Long id;
     
-    @Column
-    private int positiveScore = 1;
-
-    @Column
-    private int negativeScore = -1;
-
+    
     @Column()
     private String answer;
 
     @ManyToOne
     private QuestionModel questionModel;
-    
+       
+
     public AnswerModel() {
     }
 
@@ -79,23 +75,6 @@ public class AnswerModel {
      */
     public void  setQuestionModel(QuestionModel questionModel){
         this.questionModel = questionModel;
-    }
-
-    
-    public int getPositiveScore() {
-        return positiveScore;
-    }
-
-    public void setPositiveScore(int positiveScore) {
-        this.positiveScore = positiveScore;
-    }
-
-    public int getNegativeScore() {
-        return negativeScore;
-    }
-
-    public void setNegativeScore(int negativeScore) {
-        this.negativeScore = negativeScore;
     }
 
     @Override

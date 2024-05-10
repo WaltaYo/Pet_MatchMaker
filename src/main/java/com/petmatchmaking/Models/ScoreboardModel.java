@@ -10,6 +10,12 @@ public class ScoreboardModel {
     @GeneratedValue
     private Long id;
 
+    @Override
+    public String toString() {
+        return "ScoreboardModel [id=" + id + ", user=" + user + ", petId=" + petId + ", petType=" + petType + ", score="
+                + score + "]";
+    }
+
     @ManyToOne
     private UserModel user;
 
