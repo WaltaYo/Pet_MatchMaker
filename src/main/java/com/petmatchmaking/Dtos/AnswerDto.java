@@ -18,6 +18,12 @@ public class AnswerDto {
     public AnswerDto() {
     }
 
+    public AnswerDto(Long id, String answer, boolean selected) {
+        this.id = id;
+        this.answer = answer;
+        this.selected = selected;
+    }
+
     /**
      * DTO parameterized Constructor
      * 
@@ -81,4 +87,10 @@ public class AnswerDto {
     public void setSelected(boolean selected) {
         this.selected = selected;
     }
+
+    @Override
+    public String toString() {
+        return answer;
+    }
+    
 }
