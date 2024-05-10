@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.petmatchmaking.Dtos.AnswerDto;
 import com.petmatchmaking.Dtos.QuestionDto;
 import com.petmatchmaking.Dtos.ScoreboardDto;
+import com.petmatchmaking.Dtos.UserDto;
 import com.petmatchmaking.Models.AnswerModel;
 import com.petmatchmaking.Models.ScoreboardModel;
 import com.petmatchmaking.Models.UserModel;
@@ -115,23 +116,26 @@ public class HomeController extends BaseController {
         return "home/aboutus";
     }
 
-    @GetMapping("/login")
-    public String getLogin() {
+    @GetMapping("/createlogin")
+    public String getLogin(Model model) {
+        UserDto loginUser = new UserDto();
+        model.addAttribute("loginUser", loginUser);
         return "home/createlogin";
     }
 
     @PostMapping("/createlogin")
-    public String loginUser(@RequestParam String userId, @RequestParam String password, HttpServletResponse response) {
+    public String loginUser(@ModelAttribute("loginUser") UserDto login, HttpServletResponse response) {
         logout(response);
-        UserModel user = userService.findByUserId(userId);
-        if (user != null && password.equals(user.getPassword())) {
-            Cookie userIdCookie = new Cookie("Id", user.getId().toString());
-            Cookie userNameCookie = new Cookie("username", user.getName());
+    UserModel model = login.convertToModel();
+    userService.saveUser(model);
+        // UserModel user = userService.findByUserId(userId);
+            Cookie userIdCookie = new Cookie("Id", model.getId().toString());
+            Cookie userNameCookie = new Cookie("username", model.getName());
             response.addCookie(userNameCookie);
             response.addCookie(userIdCookie);
             return "redirect:/";
-        }
-        return "redirect:/createlogin";
+        // }
+        // return "redirect:/createlogin";
     }
 
     @GetMapping("autologin")
@@ -168,4 +172,10 @@ public class HomeController extends BaseController {
         response.addCookie(userIdCookie);
         response.addCookie(order);
     }
+
+    @GetMapping("/virtualpet")
+    public String getVirtualPet() {
+        return "home/virtualpet";
+    }
+    
 }

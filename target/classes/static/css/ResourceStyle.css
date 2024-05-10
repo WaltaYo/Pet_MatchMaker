@@ -174,8 +174,9 @@ h2 {
 
 /* set the images for the links to the same size, also affected the logo at the bottom. need to revisit to see what size the group wants  */
 img {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
+
 }
 
 /* Moves the footer below the link items  */
@@ -189,6 +190,7 @@ p {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  text-align: center;
   padding-left: 15px;
 }
 @media(max-width: 376px) {

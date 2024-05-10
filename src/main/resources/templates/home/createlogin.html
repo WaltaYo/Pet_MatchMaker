@@ -24,18 +24,19 @@
 <div class="create-box">
     <form action="#" th:action="@{/createlogin}" th:object="${loginUser}" method="post">
     <label>Enter your Name</label>
-    <input type="text" placeholder="Name">
+    <input type="text" placeholder="Name" th:field="*{name}">
     <label>Enter your Email</label>
-    <input type="text" placeholder="Email">
+    <input type="text" placeholder="Email" th:field="*{email}">
     <label>Choose a Username</label>
-    <input type="text" placeholder="Username">
+    <li>min 6 characters</li>
+    <input type="text" placeholder="Username" th:field="*{userId}">
     <label>Choose a Unique Password</label>
-    <input type="password" placeholder="Password">
+    <input type="password" placeholder="Password" th:field="*{password}">
     
-    <div class="ccbtn">Create Account</div>
-    <a th:href="@{/}">
-        <div class="ccbtn">Cancel</div>
-      </a>
+    
+    <button class="ccbtn" type="submit">Create Account</button>
+    <a th:href="@{/home/index}"></a><button class="ccbtn">Cancel</button>
+      
 </form>
 
 

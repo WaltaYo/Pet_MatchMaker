@@ -134,7 +134,7 @@
   }
   .regbtn:hover {
     background-color: var(--color4);
-    color: var(--color3);
+    color: white;
     padding: 16px 20px;
     border: none;
     cursor: pointer;
@@ -145,7 +145,7 @@
 
   .ccbtn{
     background-color: var(--color4);
-    color: var(--color3);
+    color: white;
     padding: 16px 20px;
     border: none;
     cursor: pointer;
