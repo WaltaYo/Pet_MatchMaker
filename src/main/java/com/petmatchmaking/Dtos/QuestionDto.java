@@ -14,8 +14,8 @@ public class QuestionDto {
     private Long id;
     private String question;
     private boolean manyAnswers = false;
-    private AnswerDto[] answerDto;
-
+    private ArrayList<AnswerDto> answerDto;
+    private Boolean[] selected;
     /**
      * Default Constructor
      */
@@ -32,6 +32,7 @@ public class QuestionDto {
         this.question = model.getQuestion();
         this.manyAnswers = model.isManyAnswers();
         this.answerDto =convertToDto(model.getAnswers());
+        this.selected = new Boolean[model.getAnswers().size()];
     }
 
     /**
@@ -99,24 +100,28 @@ public class QuestionDto {
         this.manyAnswers = manyAnswers;
     }
 
-    /**
-     * Method to get the collection of answers
-     * 
-     * @return collection of answers
-     */
-    public AnswerDto[] getAnswerDto() {
-        return answerDto;
-    }
 
+
+    public Boolean[] getAnswers() {
+        selected = new Boolean[this.answerDto.size()];
+        int counter=0;
+        for(AnswerDto dto : this.answerDto){
+            selected[counter++] = false;
+        }
+        return selected;
+    }
     /**
      * Method to set the collection of answers
      * 
      * @param answerDto collection of answers
      */
-    public void setAnswerDto(AnswerDto[] answerDto) {
+    public void setAnswerDto(ArrayList<AnswerDto> answerDto) {
         this.answerDto = answerDto;
     }    
     
+    public AnswerDto getSelected(int index){
+     return answerDto.get(index);
+    } 
     /**
      * Method to convert a collection of answer models to answer data transfer objects
      * 
@@ -124,12 +129,15 @@ public class QuestionDto {
      * 
      * @return collection of answer data transfer objects
      */
-    private AnswerDto[] convertToDto(Collection<AnswerModel> answerModels) {
-        AnswerDto[] answerDtos = new AnswerDto[answerModels.size()];
-        int counter = 0;
+    private ArrayList<AnswerDto> convertToDto(Collection<AnswerModel> answerModels) {
+        ArrayList<AnswerDto> answerDtos = new ArrayList<>();
         for (AnswerModel model : answerModels) {
-            answerDtos[counter++]=new AnswerDto(model);
+            answerDtos.add(new AnswerDto(model));
         }
         return answerDtos;
+    }
+
+    public Collection<AnswerDto> getAnswerDto() {
+        return answerDto;
     }
 }
