@@ -29,7 +29,8 @@
         <tr>
             <td>
 
-
+                <form id="questionform" action="#" th:action="@{/question}" th:object="${question}" method="post">
+                    <input type="hidden" th:value="*{id}"/>
                 <table>
                     <thead>
                         <tr>
@@ -40,26 +41,23 @@
                             </strong>
                         </tr>
                     </thead>
-                    <tbody>
-                        <form id="questionform" action="#" th:action="@{/question}" th:object="${question}" method="post">
-                            <tr th:each="answer, stat : ${question.answerDto}">
-                                <td>
-                                    <input type="checkbox" th:name="|answerDto[${stat.index}].answer|"
-                                        th.value="${answer.getId()}" th:checked="${answer.selected}">
-
-
-                                </td>
-                                <td th:text="${answer.answer}"></td>
-                            </div>
-
-                            </tr>
+                    <tbody> 
+                     <tr th:each="value, stat : ${question.answerDto}">
+                        <td>
+                            <input type="checkbox" th:checked="${value}"
+                                 th:field="${question.answerDto[__${stat.index}__].selected}">
+                                 <input type="hidden" th:value="${question.answerDto[__${stat.index}__].id}">
+                        </td>
+                        <td th:text="${value.answer}"></td>
+                    </tr>
                             
-                        </form>
+                  
                         <td class="nextbtn">
                             <button form="questionform" type="submit">Next</button>
                             </td>
                     </tbody>
                 </table>
+            </form>
             </td>
             <td>
                 <table>

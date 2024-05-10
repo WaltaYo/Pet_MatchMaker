@@ -15,6 +15,7 @@ public class ScoreboardDto {
         this.score = model.getScore();
     }
 
+    
     public Long getId() {
         return id;
     }
