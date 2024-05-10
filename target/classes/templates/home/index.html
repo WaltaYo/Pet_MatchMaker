@@ -83,7 +83,13 @@
       </div>
       
     </div>
- 
+ <!-- <p th:text="${isLoggedIn}"></p> -->
+    <div th:if="${isLoggedIn}">
+      <p>Logged In</p>
+    </div>
+    <div th:unless="${isLoggedIn}">
+      <p>Logged Out</p>
+    </div>
   </body>
   
   <div th:replace="./fragments/footerfragment :: footer"></div>
