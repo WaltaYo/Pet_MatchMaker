@@ -81,62 +81,74 @@ public class Populator implements CommandLineRunner {
         AnswerModel answerModel = new AnswerModel("Dogs");
         answerModel.setId(1l);
         answerModel.setQuestionModel(questionModel);
-        updatePets(answerModel);
+        answerService.saveAnswer(answerModel);
+        answerModel.setNegativeScore(-1);
 
         AnswerModel answerModel2 = new AnswerModel("Cats");
         answerModel2.setId(2l);
         answerModel2.setQuestionModel(questionModel);
-        updatePets(answerModel2);
+        answerService.saveAnswer(answerModel2);
+        answerModel.setPositiveScore(1);
 
         AnswerModel answerModel3 = new AnswerModel("Rodents");
         answerModel3.setId(3l);
         answerModel3.setQuestionModel(questionModel);
-        updatePets(answerModel3);
+        answerService.saveAnswer(answerModel3);
+        answerModel.setPositiveScore(1);
 
         AnswerModel answerModel4 = new AnswerModel("Birds");
         answerModel4.setId(4l);
         answerModel4.setQuestionModel(questionModel);
-        updatePets(answerModel4);
+        answerService.saveAnswer(answerModel4);
+        answerModel.setPositiveScore(1);
 
         AnswerModel answerModel5 = new AnswerModel("Reptiles");
         answerModel5.setId(5l);
         answerModel5.setQuestionModel(questionModel);
-        updatePets(answerModel5);
+        answerService.saveAnswer(answerModel5);
+        answerModel.setPositiveScore(1);
 
         AnswerModel answerModel6 = new AnswerModel("Fish");
         answerModel6.setId(6l);
         answerModel6.setQuestionModel(questionModel);
-        updatePets(answerModel6);
+        answerService.saveAnswer(answerModel6);
+        answerModel.setPositiveScore(1);
 
         AnswerModel answerModel7 = new AnswerModel("Farm Animals");
         answerModel7.setId(7l);
         answerModel7.setQuestionModel(questionModel);
-        updatePets(answerModel7);
+        answerService.saveAnswer(answerModel7);
+        answerModel.setPositiveScore(1);
 
         AnswerModel answerModel8 = new AnswerModel("Amphibians");
         answerModel8.setId(8l);
         answerModel8.setQuestionModel(questionModel);
-        updatePets(answerModel8);
+        answerService.saveAnswer(answerModel8);
+        answerModel.setPositiveScore(1);
 
         AnswerModel answerModel9 = new AnswerModel("Nope");
         answerModel9.setId(9l);
         answerModel9.setQuestionModel(questionModel);
-        updatePets(answerModel9);
+        answerService.saveAnswer(answerModel9);
+        answerModel.setPositiveScore(1);
 
         AnswerModel answerModel10 = new AnswerModel("Everything");
         answerModel10.setId(10l);
         answerModel10.setQuestionModel(questionModel);
-        updatePets(answerModel10);
+        answerService.saveAnswer(answerModel10);
+        answerModel.setPositiveScore(1);
 
         QuestionModel questionModel2 = new QuestionModel("What type of residence do you have?", false);
         questionModel2.setId(2l);
         questionModel2.setQuestionOrder(2.0);
         questionService.saveQuestion(questionModel2);
+        
 
         AnswerModel answerModel11 = new AnswerModel("House");
         answerModel11.setId(11l);
         answerModel11.setQuestionModel(questionModel2);
-        updatePets(answerModel11);
+        answerService.saveAnswer(answerModel11);
+        answerModel.setPositiveScore(1);
 
         AnswerModel answerModel12 = new AnswerModel("Apartment");
         answerModel12.setId(12l);
@@ -383,6 +395,10 @@ public class Populator implements CommandLineRunner {
         answerModel48.setId(48l);
         answerModel48.setQuestionModel(questionModel14);
         updatePets(answerModel48);
+
+        UserModel userModel1 = new UserModel("wawawiwa", "hellohellothere", "Walta", "www@gmail.com");
+        userModel1.setId(1L);
+        userService.saveUser(userModel1);
 
     }
     private AnswerModel updatePets(AnswerModel answerModel){

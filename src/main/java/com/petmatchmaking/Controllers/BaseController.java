@@ -22,7 +22,8 @@ public class BaseController {
     }
 
     protected boolean isUserLoggedIn(HttpServletRequest request) {
-        return (getCookieValue("username", request).length()>0);
+        String username = getCookieValue("username", request);
+        return username != null && !username.isEmpty();
     }
     protected void writeCookieValue(String name, String value, HttpServletResponse response) {
         // Create a new cookie

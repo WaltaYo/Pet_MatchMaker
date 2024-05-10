@@ -180,6 +180,10 @@
     display: flex;
     justify-content: center;
   }
+
+  .little{
+    font-size: x-small;
+  }
   .footer {
     color: var(--color6);
     padding: 10px; /* Add some padding */

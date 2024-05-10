@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.petmatchmaking.Dtos.AnswerDto;
 import com.petmatchmaking.Dtos.QuestionDto;
@@ -66,7 +68,11 @@ public class HomeController extends BaseController {
     }
 
     @GetMapping
-    public String getIndex() {
+    public String getIndex(Model model, HttpServletRequest request, HttpServletResponse response) {
+        model.addAttribute("isLoggedIn", isUserLoggedIn(request));
+        if (isUserLoggedIn(request)){
+            model.addAttribute("userId", getUserName(request));
+        }
         return "home/index";
     }
 
@@ -76,6 +82,7 @@ public class HomeController extends BaseController {
         if (!isUserLoggedIn(request)) {
             return "redirect:/login";
         }
+        model.addAttribute("isLoggedIn", isUserLoggedIn(request));
         Integer questionOrder = 0;
         String order = getCookieValue("questionOrder", request);
         if (order.length() > 0) {
@@ -184,7 +191,7 @@ public class HomeController extends BaseController {
     @GetMapping("autologin")
     public String autoLogin(HttpServletResponse response){
         logout(response);
-        UserModel user = new UserModel("testing","testing","testing","testing");
+        UserModel user = new UserModel("Visitor","testing","testing","testing");
            user.setId(0l);
            userService.saveUser(user);
             Cookie userIdCookie = new Cookie("Id", user.getId().toString());
@@ -221,4 +228,22 @@ public class HomeController extends BaseController {
         return "home/virtualpet";
     }
     
+    @PostMapping("login")
+    public String login(HttpServletResponse response, @ModelAttribute("loginUser") UserDto login){
+        logout(response);
+        UserModel model = login.convertToModel();
+        String userName = model.getUserId();
+        String userPassword = model.getPassword();
+        if( userName != null && userPassword.equals(login.getPassword())){
+            Cookie userIdCookie = new Cookie("Id", model.getId().toString());
+            Cookie userNameCookie = new Cookie("username", model.getName());
+            response.addCookie(userNameCookie);
+            response.addCookie(userIdCookie);
+            return "redirect:/";
+        } else {
+            new ResponseStatusException(HttpStatus.NOT_FOUND, "User Name not found: " + userName);
+            return "redirect:/login";
+        }
+ 
+    }
 }

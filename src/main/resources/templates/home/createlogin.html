@@ -28,17 +28,18 @@
     <label>Enter your Email</label>
     <input type="text" placeholder="Email" th:field="*{email}">
     <label>Choose a Username</label>
-    <li>min 6 characters</li>
+    <li class="little">minimum 6 characters</li>
     <input type="text" placeholder="Username" th:field="*{userId}">
     <label>Choose a Unique Password</label>
+    <li class="little">minimum 6 characters</li>
     <input type="password" placeholder="Password" th:field="*{password}">
     
     
     <button class="ccbtn" type="submit">Create Account</button>
-    <a th:href="@{/home/index}"></a><button class="ccbtn">Cancel</button>
+    
       
 </form>
-
+<a href="/"><button class="ccbtn">Cancel</button></a>
 
 
 
