@@ -67,6 +67,7 @@ public class HomeController extends BaseController {
         this.rulebookService = rulebookService;
     }
 
+
     @GetMapping
     public String getIndex(@ModelAttribute("loginUser") UserDto login, Model model, HttpServletRequest request, HttpServletResponse response) {
         model.addAttribute("isLoggedIn", isUserLoggedIn(request));
@@ -76,72 +77,118 @@ public class HomeController extends BaseController {
         return "home/index";
     }
 
+
+    /**
+     * Gets the Quiz question one at a time based o a cookie
+     */
     @GetMapping("/quiz")
     public String getQuiz(Model model, HttpServletRequest request, HttpServletResponse response) {
         //Checks user for a valid login
         if (!isUserLoggedIn(request)) {
-            return "redirect:/login";
+            return "redirect:/login"; // Make sure they login
         }
-        model.addAttribute("isLoggedIn", isUserLoggedIn(request));
+       
+        //Lets get the order of the next question
         Integer questionOrder = 0;
         String order = getCookieValue("questionOrder", request);
         if (order.length() > 0) {
+            //Save the current order if no order present
             questionOrder = Integer.parseInt(order);
         }
+
+        // Incurrment the order 
         questionOrder++;
         writeCookieValue("questionOrder", questionOrder.toString(), response);
 
+        //Get all of the current scoreboard
         Iterable<ScoreboardDto> score = scoreboardService.findAllByUserId(getUserId(request));
+
+        //Place the scoreboard in the model object
         model.addAttribute("scoreboard", score);
 
+        //Get all of the questions
         ArrayList<QuestionDto> questions = questionService.findAllDtos();
+
+        //if no more questions then results
         if(questionOrder >= (questions.size()-1)){
+            //Reset order cookie
+            writeCookieValue("questionOrder", null, response);
+            // open the result page
             return "redirect:/result";
         }
+
+        //Get the current question based on order
         QuestionDto question = questions.get( (questionOrder-1));
+
+        //Get an array of answer responses
         Boolean[] answers = question.getAnswers();
        
-       
+       //Write question and answer to the model
          model.addAttribute("question", question);
          model.addAttribute("answers", answers);
        
+         //Display the quiz html
         return "home/quiz";
     }
 
 
 
+    /**
+     * Records the answers to the Scoreboard
+     */
     @PostMapping("/question")
      public String postMethodName(@ModelAttribute("question") QuestionDto question, HttpServletRequest request) {
-        Integer questionOrder = 0;
-        String name;
-        String order = getCookieValue("questionOrder", request);
-
-        Iterable<ScoreboardDto> scores = scoreboardService.findAllByUserId(getUserId(request));
        
 
+        // Gets the current question oder number
+        Integer questionOrder = 0;
+        String order = getCookieValue("questionOrder", request);
         if (order.length() > 0) {
             questionOrder = Integer.parseInt(order);
         }
+
+        //Gets the scoreboard
+        Iterable<ScoreboardDto> scores = scoreboardService.findAllByUserId(getUserId(request));
+      
+        //Gets all the questions
         ArrayList<QuestionDto> questions = questionService.findAllDtos();
+
+        //Checks if complete
         if(questionOrder >= (questions.size()-1)){
             return "redirect:/result";
         }
+
+        //Gets the current question
         QuestionDto quest = questions.get( (questionOrder-1));
+        
+        //loop throught the anaswer of the current question
         for(AnswerDto dto : quest.getAnswerDto()){
+
+            //Get the current rules for the answer
             Iterable<RulebookModel> rules = rulebookService.findAllByAnswerId(dto.getId());
+
+            //loop through the rules
             for(RulebookModel rule : rules){
+
+                //Counter to keep up with the scoreboard
                 int counter =0;
+                //Get the current answer response
                 boolean selected = question.getSelected(counter++).isSelected();
+
+                // loop through the scoreboard, to make adjustments
                 for(ScoreboardDto score : scores){
+
+                    //Find scoreboard model to update
                     ScoreboardModel model = scoreboardService.findById(score.getId());
-                    System.out.println(model);
+                    
+                    //logic for which rule to use
                     if(selected){
                         model.setScore(model.getScore()+rule.getPostiveScore());
                     }
                     else{
                         model.setScore(model.getScore()+rule.getNegativeScore());
                     }
-                   
+                   //Save changes
                     scoreboardService.saveScoreboard(model);
 
                 }
