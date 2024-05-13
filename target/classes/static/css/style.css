@@ -95,26 +95,42 @@
 }
 
 .loggedbox{
+  display: inline-flex;
+  gap: .50em;
+  margin-top: 1.3em;
+  margin-right: 1em;
+  justify-content: space-evenly;
   background-color: var(--color1);
   text-align: center;
-  border: 2px solid black;
-  width: 175px;
+  outline: 2px solid black;
+  align-self: flex-end;
+
+
+  
+}
+p.username{
+  margin: 1.2em 1em 1.2em 1em;
 }
 
+p.welcome {
+  margin: 1.2em 1em 1.2em 1em;
+}
+
+.loggedout{
+  margin: 1.2em 1em 1.2em 1em;
+}
 .logbtn{
   background-color: var(--color4);
   color: white;
-  padding: 16px 20px;
-  border: none;
   cursor: pointer;
-  width: 175px;
-  opacity: 0.9;
+  margin: 1.2em 1em 1.2em 1em;
+
 }
+
 .header-container{
-  display: grid;
-  grid-template-columns: 85% 15%;
-  grid-template-rows: auto;
-  gap: 10px;
+  display: flex;
+  justify-content: space-between;
+
   
 }
 /* Add styles to the form container */
@@ -136,11 +152,10 @@ form.container{
 /** this is for the login box on the index.html page */
 .container1 {
   grid-area: right;
-  position: static;
-  margin: 50px;
+  margin-top: 5.5%;
   margin-left: 20%;
   margin-right: 20%;
-  padding: 75px;
+  padding: 3.52em;
   background-color: white;
 }
 
@@ -178,10 +193,7 @@ button{
   box-shadow: #31393b;
 }
 
-.btn:hover{
-  background-color: #79aed3;
-  width: 100%;
-}
+
 
 /*css for the Start Quiz button*/
 button.startbtn{
@@ -223,7 +235,6 @@ button:hover {
  background-color: #79aed3;
   border: none;
   cursor: pointer;
-  width: 175px;
   opacity: 0.9;
   box-shadow: #31393b;
 }
@@ -240,33 +251,41 @@ body {
 /*styling for the h1 header*/
 header h1 {
   color: var(--color4);
-  text-align: center;
-  margin: 0;
-  padding-left: 20%;
+  font-size: 4em;
 }
 
 h1{
-  font-size: 4em;
-
+  
+  text-align: center;
+  align-self: center;
+  margin-left: 38.0%;
+  margin-top: .4em;
+  margin-bottom: 0;
+}
+h2{
+  color: var(--color4);
+  text-align: center;
+  font-size: 3em;
+  margin: 0;
   
 }
 
 header{
   display: flex;
   justify-content: center;
+  
 }
 
-div.header-container{
+/* div.header-container{
   padding-top: 10px;
   padding-right: 20px;
-}
+} */
 
 /*footer styling*/
 .footer {
   position: fixed;
   grid-area: footer;
   color: var(--color6);
-  padding: 10px; /* Add some padding */
   width: 100%; /* Full width */
   bottom: 0;
 }
@@ -288,16 +307,24 @@ div.header-container{
 }
 /* css style for the paragraph */
 
-p.indextext{
+.text{
+  background-color: rgba(255, 255, 255, .7);
+  margin-top: 5.5%;
+  margin-left: 20%;
+
+
+}
+.indextext{
   display: flex;
+  text-decoration: solid black;
   justify-content: center;
   text-align: center;
   font-size: large;
-  margin-top: 5.5%;
-  margin-left: 20%;
-  margin-bottom: 5%;
-  background-color: white;
-  opacity:0.6;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+
+
+  
 }
 @media(max-width: 376px) {
   main {
