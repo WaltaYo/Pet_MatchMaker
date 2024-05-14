@@ -160,39 +160,28 @@ public class HomeController extends BaseController {
 
         //Gets the current question
         QuestionDto quest = questions.get( (questionOrder-1));
-        
+        ArrayList<RulebookModel> rules = new ArrayList<RulebookModel>();
         //loop throught the anaswer of the current question
         for(AnswerDto dto : quest.getAnswerDto()){
-
+            
             //Get the current rules for the answer
-            Iterable<RulebookModel> rules = rulebookService.findAllByAnswerId(dto.getId());
-
+            if(dto.isSelected()){
+                for(RulebookModel rule: rulebookService.findByAnswerId(dto.getId())){
+            rules.add(rule);
+                }
+            }
             //loop through the rules
             for(RulebookModel rule : rules){
-
-                //Counter to keep up with the scoreboard
-                int counter =0;
-                //Get the current answer response
-                boolean selected = question.getSelected(counter++).isSelected();
-
-                // loop through the scoreboard, to make adjustments
-                for(ScoreboardDto score : scores){
-
-                    //Find scoreboard model to update
-                    ScoreboardModel model = scoreboardService.findById(score.getId());
-                    
-                    //logic for which rule to use
-                    if(selected){
+                for(ScoreboardDto score : scores) {
+                    if(score.getPetId() == rule.getPetId()){
+                        ScoreboardModel model = scoreboardService.findById(score.getId());
                         model.setScore(model.getScore()+rule.getPostiveScore());
                         model.setScore(model.getScore()+rule.getNegativeScore());
+                        scoreboardService.saveScoreboard(model);
                     }
-                    // else{
-                    //     model.setScore(model.getScore()+rule.getNegativeScore());
-                    // }
-                   //Save changes
-                    scoreboardService.saveScoreboard(model);
-
+                    
                 }
+                
             }
         }
         

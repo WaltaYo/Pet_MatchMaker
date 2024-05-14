@@ -38,7 +38,7 @@ public class RulebookService {
         return rulebooks;
     }
 
-    public Iterable<RulebookModel> findAllByAnswerId(Long answerId) {
+    public Iterable<RulebookModel> findByAnswerId(Long answerId) {
         Iterable<RulebookModel> rulebooks = new ArrayList<>();
         try {
             rulebooks = rulebookRepository.findByAnswerId(answerId);

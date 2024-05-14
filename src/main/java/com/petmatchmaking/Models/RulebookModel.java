@@ -67,6 +67,9 @@ public class RulebookModel {
         return negativeScore;
     }
 
+    public Long getPetId() {
+        return petId;
+    }
     
     /**
      * To string for pet model
@@ -76,5 +79,7 @@ public class RulebookModel {
         return "RulebookModel [id=" + id + ", answerId=" + answerId + ", postiveScore=" + postiveScore
                 + ", negativeScore=" + negativeScore + ", petid=" + petId + "]";
     }
+
+    
 
 }
