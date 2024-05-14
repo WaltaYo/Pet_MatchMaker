@@ -184,10 +184,11 @@ public class HomeController extends BaseController {
                     //logic for which rule to use
                     if(selected){
                         model.setScore(model.getScore()+rule.getPostiveScore());
-                    }
-                    else{
                         model.setScore(model.getScore()+rule.getNegativeScore());
                     }
+                    // else{
+                    //     model.setScore(model.getScore()+rule.getNegativeScore());
+                    // }
                    //Save changes
                     scoreboardService.saveScoreboard(model);
 

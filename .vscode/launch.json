@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-App<virtualpets>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.petmatchmaking.App",
+            "projectName": "virtualpets",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
