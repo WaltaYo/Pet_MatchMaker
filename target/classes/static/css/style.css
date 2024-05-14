@@ -105,26 +105,33 @@
   outline: 2px solid black;
   align-self: flex-end;
 
-
   
 }
 p.username{
-  margin: 1.2em 1em 1.2em 1em;
+  margin: 1.6em 1em 1.2em 1em;
 }
 
 p.welcome {
-  margin: 1.2em 1em 1.2em 1em;
+  margin: 1.6em 1em 1.2em 1em;
 }
 
 .loggedout{
   margin: 1.2em 1em 1.2em 1em;
 }
 .logbtn{
+  text-decoration: none;
   background-color: var(--color4);
   color: white;
   cursor: pointer;
   margin: 1.2em 1em 1.2em 1em;
+  padding: .4em;
+}
 
+.logbtn:hover{
+  background-color: #79aed3;
+  border: none;
+  cursor: pointer;
+  box-shadow: #31393b;
 }
 
 .header-container{
@@ -207,7 +214,6 @@ button.startbtn{
   color: white;
   border: none;
   cursor: pointer;
-  opacity: 0.9;
   box-shadow: #31393b;
   box-sizing: border-box;
 }
@@ -224,7 +230,6 @@ button.regbtn{
   color: white;
   border: none;
   cursor: pointer;
-  opacity: 0.9;
   box-shadow: #31393b;
   box-sizing: border-box;
   
@@ -235,7 +240,6 @@ button:hover {
  background-color: #79aed3;
   border: none;
   cursor: pointer;
-  opacity: 0.9;
   box-shadow: #31393b;
 }
 /*css for the main body. spacing*/
@@ -327,12 +331,53 @@ header{
   
 }
 @media(max-width: 376px) {
-  main {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      gap: 10px;
-      font-size: smaller;
-     
+  .container {  
+    display: grid;
+    grid-template-columns: 0.3fr 3.3fr 0.3fr;
+    grid-template-rows: 1.1fr 0.7fr 2.6fr 2.6fr 1fr 0.7fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". header-container ."
+      ". ul\.navbar1 ."
+      ". paragraph ."
+      ". login ."
+      ". buttons ."
+      ". footer .";
   }
-}
+  
+  .header-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". div\.loggedbox"
+      ". .";
+    grid-area: header-container;
+  }
+
+  .main-content{grid-area: login;}
+  
+  .text{grid-area: paragraph;}
+  
+  .div\.loggedbox { grid-area: div\.loggedbox; }
+  
+  .ul\.navbar1 { grid-area: ul\.navbar1; }
+  
+  .footer { grid-area: footer; }
+
+  
+  .a\.regbutton { grid-area: a\.regbutton;
+  margin-right: 0;
+ }
+  
+  .a\.startbtn { grid-area: a\.startbtn;
+    margin-right: 0; }
+  
+  .form\.container1 { grid-area: form\.container1; }
+  
+  .dic\.text { grid-area: dic\.text; }
+}  
