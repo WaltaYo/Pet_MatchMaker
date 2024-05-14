@@ -8,7 +8,7 @@
     <title>Quiz</title>
 </head>
 
-
+<div class="container">
     <div class="bg-img">
         <h1>
             Pet Matchmaker Quiz
@@ -27,7 +27,7 @@
 
 
 <body>
-            <table class="qtable">
+            <table class="main-content">
                 <tr>
                     <td>
 
@@ -54,13 +54,16 @@
                                         <td th:text="${value.answer}"></td>
                                     </tr>
 
-
-                                    <td class="nextbtn">
-                                        <button form="questionform" type="submit">Next</button>
-                                    </td>
+                                   
+                                </div>
                                 </tbody>
                             </table>
+                              <div class="button">
+                                    <td>
+                                        <button form="questionform" type="submit">Next</button>
+                                    </td>    
                         </form>
+                       
                     </td>
                     <!-- <td>
                 <br> -->
@@ -78,5 +81,5 @@
     </body>   
     <div th:replace="./fragments/footerfragment :: footer"></div>
  
-
+</div>
 </html>

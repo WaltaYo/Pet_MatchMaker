@@ -1,8 +1,3 @@
-/* 
-* {
-  border: 2px solid red;
-} */
-/* color scheme*/
 :root {
   --color1: #f4aaa4;
   --color2: #ec9f80;
@@ -14,13 +9,51 @@
 }
 
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
-
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
-main {
-  background-color: var(--color4);
-  display: grid;
-  
-    }
+
+.container {
+  display: grid; 
+  grid-auto-columns: 1fr; 
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 0.8fr 0.4fr 3fr 0.9fr 0.5fr; 
+  gap: 10px 10px; 
+  grid-template-areas: 
+    "header header header header header"
+    "navbar1 navbar1 navbar1 navbar1 navbar1"
+    ". main-content main-content main-content ."
+    ". main-content main-content main-content button"
+    "footer footer footer footer footer"; 
+}
+
+.header { grid-area: header; }
+
+.navbar1 { grid-area: navbar1; }
+
+.footer { 
+  grid-area: footer;
+      position: fixed;
+      grid-area: footer;
+      color: var(--color6);
+      padding: 10px; /* Add some padding */
+      width: 100%; /* Full width */
+      bottom: 0;
+}
+
+.button { 
+  grid-area: button;
+  text-align: right; 
+ 
+}
+
+.main-content { 
+  grid-area: main-content; 
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1em 10% 1em 10%;
+  border-radius: 10px;
+}
+
+
 .navbar1  {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   text-align: center;
@@ -40,7 +73,7 @@ main {
   display: inline-block;
   list-style: outside none none;
   margin: 0 1em;
-  padding: 0;
+
 }
 .navbar1 a {
   padding: 0.5em 0.8em;
@@ -89,7 +122,7 @@ main {
   opacity: 1;
 }
 
-/* background image and login panel */
+/* background image */
 .bg-img {
   background-image: url("/images/petpaws.jpeg");
   background-size: contain;
@@ -103,13 +136,12 @@ main {
 
 body {
 background-color: var(--color1);
-min-height: 50vh;
+
 }
 
 
 p {
   font-size: x-large;
-  
   opacity: 80%;
 }
 
@@ -122,26 +154,8 @@ h1 {
 
 }
 
-.qtable {
-align-self: center;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 1em 10% 1em 10%;
-  margin: auto;
 
-}
 
-.nextbtn{
-
-}
-
-.footer {
-position: fixed;
-grid-area: footer;
-color: var(--color6);
-padding: 10px; /* Add some padding */
-width: 100%; /* Full width */
-bottom: 0;
-}
 
 
 button {
@@ -153,9 +167,11 @@ button {
   width: auto;
   opacity: 0.9;
   box-shadow: #31393b;
-  margin-left: 100px;
+  margin: 100px;
   border-radius: 10px;
   border-color: #0e0d0d;
+  
+
 }
 
 
