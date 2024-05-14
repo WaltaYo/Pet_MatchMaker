@@ -310,15 +310,15 @@ public class Populator implements CommandLineRunner {
         answerModel29.setId(29l);
         answerModel29.setQuestionModel(questionModel7);
         answerService.saveAnswer(answerModel29);
-        effectSomePetsPositive(answerModel28, 3, false, false, false, false, true, false, false, true, true);
-        effectSomePetsNegative(answerModel28,-3, true, true, true, true, false, true, true, false, false);
+        effectSomePetsPositive(answerModel29, 3, false, false, false, false, true, false, false, true, true);
+        effectSomePetsNegative(answerModel29,-3, true, true, true, true, false, true, true, false, false);
 
         AnswerModel answerModel30 = new AnswerModel("Just want to play the field.");
         answerModel30.setId(30l);
         answerModel30.setQuestionModel(questionModel7);
         answerService.saveAnswer(answerModel30);
-        effectSomePetsPositive(answerModel28, 3, true, true, false, false, false, false, false, false, false);
-        effectSomePetsNegative(answerModel28,-3, false, false, true, true, true, true, true, true, true);
+        effectSomePetsPositive(answerModel30, 3, true, true, false, false, false, false, false, false, false);
+        effectSomePetsNegative(answerModel30,-3, false, false, true, true, true, true, true, true, true);
 
         QuestionModel questionModel8 = new QuestionModel("What is your work vibe?", false);
         questionModel8.setId(8l);
@@ -329,18 +329,22 @@ public class Populator implements CommandLineRunner {
         answerModel31.setId(31l);
         answerModel31.setQuestionModel(questionModel8);
         answerService.saveAnswer(answerModel31);
-        effectSomePetsPositive(answerModel28, 2, true, false, true, false, true, false, false, false, true);
-        effectSomePetsNegative(answerModel28,-2, false, false, true, true, true, true, true, true, true);
+        effectSomePetsPositive(answerModel31, 2, true, false, true, false, true, false, false, false, true);
+        effectSomePetsNegative(answerModel31,-2, false, false, false, true, false, true, true, true, false);
 
-        AnswerModel answerModel32 = new AnswerModel("I like to work independent with minimal interuptions");
+        AnswerModel answerModel32 = new AnswerModel("I like to work independent with minimal interruptions");
         answerModel32.setId(32l);
         answerModel32.setQuestionModel(questionModel8);
         answerService.saveAnswer(answerModel32);
+        effectSomePetsPositive(answerModel32, 2, false, true, false, true, false, true, true, true, true);
+        effectSomePetsNegative(answerModel32,-2, false, false, true, false, true, false, false, false, false);
 
         AnswerModel answerModel33 = new AnswerModel("I work in complete chaos");
         answerModel33.setId(33l);
         answerModel33.setQuestionModel(questionModel8);
         answerService.saveAnswer(answerModel33);
+        effectSomePetsPositive(answerModel33, 2, false, true, false, false, false, false, true, false, false);
+        effectSomePetsNegative(answerModel33,-2, true, false, true, true, true, true, false, true, true);
 
         QuestionModel questionModel9 = new QuestionModel("What kind of lifestyle do you maintain?", false);
         questionModel9.setId(9l);
@@ -352,16 +356,19 @@ public class Populator implements CommandLineRunner {
         answerModel34.setId(34l);
         answerModel34.setQuestionModel(questionModel9);
         answerService.saveAnswer(answerModel34);
+        effectSomePetsPositive(answerModel34, 1, false, false, false, false, false, true, false, true, true);
 
         AnswerModel answerModel35 = new AnswerModel("Medium- I like luxury where I can but I can be easy going ");
         answerModel35.setId(35l);
         answerModel35.setQuestionModel(questionModel9);
         answerService.saveAnswer(answerModel35);
+        effectSomePetsPositive(answerModel35, 1, false, false, false, false, false, true, false, true, true);
 
         AnswerModel answerModel36 = new AnswerModel("Low- I love a low budget");
         answerModel36.setId(36l);
         answerModel36.setQuestionModel(questionModel9);
         answerService.saveAnswer(answerModel36);
+        effectSomePetsPositive(answerModel36, 1, false, false, false, false, false, true, false, false, true);
 
         QuestionModel questionModel10 = new QuestionModel("Can you take care of yourself?", false);
         questionModel10.setId(10l);
@@ -372,11 +379,13 @@ public class Populator implements CommandLineRunner {
         answerModel37.setId(37l);
         answerModel37.setQuestionModel(questionModel10);
         answerService.saveAnswer(answerModel37);
+        effectSomePetsPositive(answerModel37, 1, true, true, true, true, true, true, true, true, true);
 
         AnswerModel answerModel38 = new AnswerModel("No, I'm still a child and need a parent to help ");
         answerModel38.setId(38l);
         answerModel38.setQuestionModel(questionModel10);
         answerService.saveAnswer(answerModel38);
+        effectSomePetsPositive(answerModel38, 1, false, false, false, false, false, false, true, false, true);
 
         QuestionModel questionModel11 = new QuestionModel("What size animal?", false);
         questionModel11.setId(11l);
@@ -387,16 +396,19 @@ public class Populator implements CommandLineRunner {
         answerModel39.setId(39l);
         answerModel39.setQuestionModel(questionModel11);
         answerService.saveAnswer(answerModel39);
+        effectSomePetsPositive(answerModel39, 2, false, false, false, true, false, true, true, true, true);
 
         AnswerModel answerModel40 = new AnswerModel("Medium");
         answerModel40.setId(40l);
         answerModel40.setQuestionModel(questionModel11);
         answerService.saveAnswer(answerModel40);
+        effectSomePetsPositive(answerModel40, 2, true, true, false, true, false, true, false, false, true);
 
         AnswerModel answerModel41 = new AnswerModel("Large");
         answerModel41.setId(41l);
         answerModel41.setQuestionModel(questionModel11);
         answerService.saveAnswer(answerModel41);
+        effectSomePetsPositive(answerModel41, 2, true, false, true, false, false, false, false, false, false);
 
         QuestionModel questionModel12 = new QuestionModel("Social activity?", false);
         questionModel12.setId(12l);
@@ -407,11 +419,13 @@ public class Populator implements CommandLineRunner {
         answerModel42.setId(42l);
         answerModel42.setQuestionModel(questionModel12);
         answerService.saveAnswer(answerModel42);
+        effectSomePetsPositive(answerModel42, 2, false, true, false, true, false, true, true, true, false);
 
         AnswerModel answerModel43 = new AnswerModel("Extrovert?");
         answerModel43.setId(43l);
         answerModel43.setQuestionModel(questionModel12);
         answerService.saveAnswer(answerModel43);
+        effectSomePetsPositive(answerModel43, 2, true, true, true, false, true, false, false, false, true);
 
         QuestionModel questionModel13 = new QuestionModel("Sunshine or rainy day?", false);
         questionModel13.setId(13l);
@@ -422,11 +436,13 @@ public class Populator implements CommandLineRunner {
         answerModel44.setId(44l);
         answerModel44.setQuestionModel(questionModel13);
         answerService.saveAnswer(answerModel44);
+        effectSomePetsPositive(answerModel44, 2, true, false, true, true, false, true, false, false, false);
 
         AnswerModel answerModel45 = new AnswerModel("Rainy day");
         answerModel45.setId(45l);
         answerModel45.setQuestionModel(questionModel13);
         answerService.saveAnswer(answerModel45);
+        effectSomePetsPositive(answerModel45, 2, false, true, false, false, true, false, true, true, true);
 
         QuestionModel questionModel14 = new QuestionModel("Beach day?", false);
         questionModel14.setId(14l);
@@ -437,16 +453,19 @@ public class Populator implements CommandLineRunner {
         answerModel46.setId(46l);
         answerModel46.setQuestionModel(questionModel14);
         answerService.saveAnswer(answerModel46);
+        effectSomePetsPositive(answerModel46, 2, true, false, false, false, false, true, false, true, true);
 
         AnswerModel answerModel47 = new AnswerModel("Sunbathe ");
         answerModel47.setId(47l);
         answerModel47.setQuestionModel(questionModel14);
         answerService.saveAnswer(answerModel47);
+        effectSomePetsPositive(answerModel47, 2, true, true, true, true, true, true, false, false, false);
 
         AnswerModel answerModel48 = new AnswerModel("Hell nawww ");
         answerModel48.setId(48l);
         answerModel48.setQuestionModel(questionModel14);
         answerService.saveAnswer(answerModel48);
+        effectSomePetsPositive(answerModel48, 2, false, true, false, false, false, false, true, false, false);
 
         UserModel userModel = new UserModel("Visitor", "password", "Visitor", "www@gmail.com");
         userModel.setId(1L);
