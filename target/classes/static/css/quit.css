@@ -16,30 +16,11 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
 
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
-
-/* .navbar1 {
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 1px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-transition: all 0.35s ease;
-    transition: all 0.35s ease;
-    background-color: white;
-    width: auto;
-} */
-
-header h1 {
-    color: var(--color4);
-    font-size: 4em;
-    color: var(--color4);
-    text-align: center;
-    margin: 0;
-  
-  }
-
+main {
+    background-color: var(--color4);
+    display: grid;
+    
+      }
 .navbar1  {
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     text-align: center;
@@ -118,38 +99,53 @@ header h1 {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    padding-left: 15px;
-    padding-left: 15px;
-    
-
 }
+
+body {
+  background-color: var(--color1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 50vh;
+}
+  
 
 p {
     font-size: x-large;
-    background-color: #79aed3;
+    
     opacity: 80%;
 }
 
 h1 {
     color: var(--color4);
+    font-size: 4em;
+    color: var(--color4);
     text-align: center;
-    margin: 20px;
-}
-
-body {
-    background-color: var(--color1);
-    display: inline-block;
-    align-items: center;
-    justify-content: center;
-
-}
+    margin: 0;
+  
+  }
 
 .qtable {
-    min-width: 100%;
+  align-self: center;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 1em 10% 1em 10%;
     /* margin: 0 40% 0 40%; */
 
+}
+
+.nextbtn{
+
+}
+
+.footer {
+  position: fixed;
+  grid-area: footer;
+  color: var(--color6);
+  padding: 10px; /* Add some padding */
+  width: 100%; /* Full width */
+  bottom: 0;
 }
 
 
