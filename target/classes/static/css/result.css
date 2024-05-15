@@ -206,9 +206,9 @@ p {
 }
 
 
-#hiddenText, #hiddenText3 {
+/* #hiddenText, #hiddenText3, #scoreboard {
   display: none;
-}
+} */
 
 #hiddenText2{
   display: none;
