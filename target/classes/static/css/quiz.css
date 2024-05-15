@@ -170,11 +170,16 @@ button {
   margin: 100px;
   border-radius: 10px;
   border-color: #0e0d0d;
-  color: #3b1717;
+  color: #e6dede;
 
 }
 
-button:hover {
+button:hover{
+  background-color: #79aed3;
+ 
+}
+
+/* button:hover {
   background-color: var(--color4);
   color: var(--color3);
   padding: 16px 20px;
@@ -187,7 +192,7 @@ button:hover {
   border-radius: 10px;
   border-color: #0e0d0d;
   color:aliceblue;
-}
+} */
 
 
 
