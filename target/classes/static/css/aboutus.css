@@ -133,8 +133,15 @@ img {
     margin: 5px;
 
 }
+
+.profileImg{
+  grid-area: a;
+  width: 100px;
+  height: 120px;
+}
+
 div{
-    text-align:justify;
+    text-align:left;
 }
 
 header h1 {
@@ -142,22 +149,51 @@ header h1 {
     text-align: center;
     margin: 0;
 }
+h1{
+  text-align: center;
+}
 
+h2{
+  grid-area: b;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
 body {
     background-color: var(--color1);
     display: flex;
     flex-direction: column;
     position: relative;
     min-height: 50vh;
+
    
 }
 
 main {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    align-items: stretch;
     gap: 10px;
+
+    
    
 }
+
+.indv{
+  display: grid;
+  grid-template-columns: 1fr, 1fr, 1fr;
+  grid-template-rows: 2fr, 3fr, 1fr;
+  grid-template-areas: 
+    "a b e "
+    "c c c"
+    "d d d";
+  min-height: 200px;
+  background-color: rgba(255, 255, 255, .7) ;
+  
+}
+
+
+
 
 a:hover {
     color: blue;
@@ -177,14 +213,65 @@ button {
 }
 
 
-@media(max-width: 376px) {
-    main {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 10px;
-        font-size: smaller;
-       
-    }
+
+
+/* Icons for about us links  */
+
+.aboutUsIcon{
+  grid-area: d;
+  display:flex;
+  align-content : flex-end;
+  justify-content: center;
+
+}
+.linkedInIcon{
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 50%;
+
 }
 
+.gitHubIcon{
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 50%;
+}
+
+.portfolioIcon{
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 50%;
+}
+.portfolioIcon2{
+  width: 40px;
+  height: 40px;
+}
+
+.pic{
+  background-color: var(--color1);
+  border-width: 1px;
+  border-color: var(--color1);
+}
+
+.description{
+  grid-area: c;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: .25rem;
+ 
+  
+
+}
+
+@media(max-width: 376px) {
+  main {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 10px;
+      font-size: smaller;
+      
+      
+     
+  }
+}
