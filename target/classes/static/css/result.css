@@ -205,11 +205,14 @@ p {
   100% {background-color: green;}
 }
 
-
-/* #hiddenText, #hiddenText3, #scoreboard {
+.hidden-row {
   display: none;
-} */
-
+}
+#hiddenText,
+#hiddenText3,
+#scoreboard {
+  display: none;
+}
 #hiddenText2{
   display: none;
   font-size: 50px;
