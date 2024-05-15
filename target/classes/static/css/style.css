@@ -331,53 +331,33 @@ header{
   
 }
 @media(max-width: 376px) {
-  .container {  
+  .container {
     display: grid;
-    grid-template-columns: 0.3fr 3.3fr 0.3fr;
-    grid-template-rows: 1.1fr 0.7fr 2.6fr 2.6fr 1fr 0.7fr;
     grid-auto-columns: 1fr;
+    grid-template-columns: 0.2fr 1.8fr 1.8fr 0.2fr;
+    grid-template-rows: 0.3fr 0.2fr 1.7fr 1.8fr 0.1fr;
     gap: 0px 0px;
-    grid-auto-flow: row;
     grid-template-areas:
-      ". header-container ."
-      ". ul\.navbar1 ."
-      ". paragraph ."
-      ". login ."
-      ". buttons ."
-      ". footer .";
+      "a a a a"
+      "b b b b"
+      ". c c ."
+      ". d d ."
+      "e e e e";
   }
-  
-  .header-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      ". div\.loggedbox"
-      ". .";
-    grid-area: header-container;
-  }
-
-  .main-content{grid-area: login;}
-  
-  .text{grid-area: paragraph;}
-  
-  .div\.loggedbox { grid-area: div\.loggedbox; }
-  
-  .ul\.navbar1 { grid-area: ul\.navbar1; }
-  
-  .footer { grid-area: footer; }
-
-  
-  .a\.regbutton { grid-area: a\.regbutton;
-  margin-right: 0;
- }
-  
-  .a\.startbtn { grid-area: a\.startbtn;
-    margin-right: 0; }
-  
-  .form\.container1 { grid-area: form\.container1; }
-  
-  .dic\.text { grid-area: dic\.text; }
-}  
+.header-container{
+  grid-area: a;
+}
+h1{
+  margin: 0;
+}
+ul.navbar1{
+  grid-area: b;
+  padding: 0;
+}
+p.indextext{
+  grid-area: c;
+}
+form.container1{
+  grid-area: d;
+}
+}

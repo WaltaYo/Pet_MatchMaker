@@ -5,25 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
     <title>PetMatchMaker</title>
-
-
-</head>
+  </head>
+  
   <div class="container">
     
   <header>
     <div class="bg-img">
       <div class="header-container">
       <h1>Pet Match Maker</h1>
-        <!-- <div class="loggedbox" >
+        <div class="loggedbox" >
         <p th:if="${isLoggedIn}" class="welcome">Welcome</p >
         <p th:if="${isLoggedIn}" class="username" th:text="${userId}"></p>
         <a class="logbtn" th:if="${isLoggedIn}" th:href="@{/logout}">Log Out</a>
         <p class="loggedout" th:unless="${isLoggedIn}"> Logged Out </p>
-          </div> -->
-      <!-- <div class="loggedbox" >
+          </div> 
+       <div class="loggedbox" >
        
       </div>
-     -->
+    
     </div>
       <div class="containernav">
       <nav class="menu-content">
@@ -48,17 +47,16 @@
 
         <button type="submit" class="btn">Login</button>
               
-          <!-- need out add a log out button -->
-          <!--log out function-->
+        
 
       </form>
       <div class="text">
       <p class="indextext"> <br> 
         Welcome to our Pet Matchmaking Quiz, where we strive to pair you with your perfect furry friend!
         <br>
-         This quiz is designed to delve into your lifestyle, preferences, and personality to find the ideal 
-         <br>
-         companion who will bring joy, companionship, and love into your life.
+        This quiz is designed to delve into your lifestyle, preferences, and personality to find the ideal 
+        <br>
+        companion who will bring joy, companionship, and love into your life.
         <br>
         Through a series of thoughtfully crafted questions, we'll explore your 
         <br>
@@ -81,7 +79,7 @@
         So let's get started on this exciting journey to finding your furry soulmate!
       </p>
     </div>
-      <!-- <button class="regbtn">Register new user</button> -->
+  
 
       <a class="regbtn" th:href="@{/createlogin}"><button class="regbtn" >Register New User</button></a>
       <a class="startbtn" th:href="@{/quiz}"><button class="startbtn">Start Your Quiz!</button></a> 
