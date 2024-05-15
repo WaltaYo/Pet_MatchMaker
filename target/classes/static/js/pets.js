@@ -55,7 +55,7 @@ function updateStats() {
 }
 
 function startTimer() {
-    timerInterval = setInterval(updateStats, 100);
+    timerInterval = setInterval(updateStats, 1000);
 }
 
 function feedPet() {
