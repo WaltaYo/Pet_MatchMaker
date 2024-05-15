@@ -40,7 +40,12 @@
 
                                         <p th:text="${question.question}"></p>
                                         <strong>
+                                            <div th:if="${question.manyAnswers}">
                                             <h8>*Pick all that apply*</h8>
+                                            </div>
+                                            <div th:unless="${question.manyAnswers}">
+                                            <h8>*Pick ONE*</h8>
+                                            </div>
                                         </strong>
                                     </tr>
                                 </thead>
