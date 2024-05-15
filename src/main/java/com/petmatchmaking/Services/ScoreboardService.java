@@ -73,6 +73,23 @@ public class ScoreboardService {
         return results;
     }
 
+    public Iterable<ScoreboardModel> findAllModelsByUserId(Long userId) {
+        Collection<ScoreboardModel> scoreboard = new ArrayList<>();
+
+        try {
+            scoreboard = scoreboardRepository.findByUserId(userId);
+            if (scoreboard.size() == 0) {
+                CreateScoreboard(userId);
+                scoreboard = scoreboardRepository.findByUserId(userId);
+            }
+            ArrayList<ScoreboardModel> list = iterableToList(scoreboard);
+            Collections.sort(list, new ScoreboardCompare());
+        } catch (Exception ex) {
+            throw ex;
+        }
+        return scoreboard;
+    }
+
     private void CreateScoreboard(long userId) {
         Iterable<PetModel> pets = petRepository.findAll();
         UserModel user = userRepository.findById(userId).get();

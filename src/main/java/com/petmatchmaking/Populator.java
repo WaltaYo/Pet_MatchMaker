@@ -485,31 +485,31 @@ public class Populator implements CommandLineRunner {
             boolean effectCat, boolean effectFarmAnimals, boolean effectBirds, boolean effectRodents,
             boolean effectReptiles, boolean effectVirtualPet, boolean effectAmphibians, boolean effectFish) {
         ArrayList<PetModel> pets = new ArrayList<PetModel>();
-        if (effectDog = true) {
+        if (effectDog) {
             pets.add(petService.findById(1l)); // Could be changed to name if A find by name is added.
         }
-        if (effectCat = true) {
+        if (effectCat) {
             pets.add(petService.findById(2l)); // Could be changed to name if A find by name is added.
         }
-        if (effectFarmAnimals = true) {
+        if (effectFarmAnimals) {
             pets.add(petService.findById(3l)); // Could be changed to name if A find by name is added.
         }
-        if (effectBirds = true) {
+        if (effectBirds) {
             pets.add(petService.findById(4l)); // Could be changed to name if A find by name is added.
         }
-        if (effectRodents = true) {
+        if (effectRodents) {
             pets.add(petService.findById(5l)); // Could be changed to name if A find by name is added.
         }
-        if (effectReptiles = true) {
+        if (effectReptiles) {
             pets.add(petService.findById(6l)); // Could be changed to name if A find by name is added.
         }
-        if (effectVirtualPet = true) {
+        if (effectVirtualPet) {
             pets.add(petService.findById(7l)); // Could be changed to name if A find by name is added.
         }
-        if (effectAmphibians = true) {
+        if (effectAmphibians) {
             pets.add(petService.findById(8l)); // Could be changed to name if A find by name is added.
         }
-        if (effectFish = true) {
+        if (effectFish) {
             pets.add(petService.findById(9l)); // Could be changed to name if A find by name is added.
         }
         for (PetModel pet : pets) {
@@ -522,31 +522,31 @@ public class Populator implements CommandLineRunner {
             boolean effectCat, boolean effectFarmAnimals, boolean effectBirds, boolean effectRodents,
             boolean effectReptiles, boolean effectVirtualPet, boolean effectAmphibians, boolean effectFish) {
         ArrayList<PetModel> pets = new ArrayList<PetModel>();
-        if (effectDog = true) {
+        if (effectDog) {
             pets.add(petService.findById(1l)); // Could be changed to name if A find by name is added.
         }
-        if (effectCat = true) {
+        if (effectCat) {
             pets.add(petService.findById(2l)); // Could be changed to name if A find by name is added.
         }
-        if (effectFarmAnimals = true) {
+        if (effectFarmAnimals) {
             pets.add(petService.findById(3l)); // Could be changed to name if A find by name is added.
         }
-        if (effectBirds = true) {
+        if (effectBirds) {
             pets.add(petService.findById(4l)); // Could be changed to name if A find by name is added.
         }
-        if (effectRodents = true) {
+        if (effectRodents) {
             pets.add(petService.findById(5l)); // Could be changed to name if A find by name is added.
         }
-        if (effectReptiles = true) {
+        if (effectReptiles) {
             pets.add(petService.findById(6l)); // Could be changed to name if A find by name is added.
         }
-        if (effectVirtualPet = true) {
+        if (effectVirtualPet) {
             pets.add(petService.findById(7l)); // Could be changed to name if A find by name is added.
         }
-        if (effectAmphibians = true) {
+        if (effectAmphibians) {
             pets.add(petService.findById(8l)); // Could be changed to name if A find by name is added.
         }
-        if (effectFish = true) {
+        if (effectFish) {
             pets.add(petService.findById(9l)); // Could be changed to name if A find by name is added.
         }
         for (PetModel pet : pets) {

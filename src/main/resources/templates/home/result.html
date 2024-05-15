@@ -31,6 +31,14 @@
     <h2 id="hiddenText">Results! </h2>
     <h3 id="hiddenText2">CONGRATULATIONS!</h3>
     <H3 id="hiddenText3"> See Your Recommended Pets Below! </h3>
+      <table>
+        <tr th:each="score : ${scoreboard}">
+            <td>
+            <td th:text="${score.score}"></td>
+            <td th:text="${score.petType}"></td>
+</td>
+</tr>
+</table>
     </div>
 
 </body>
