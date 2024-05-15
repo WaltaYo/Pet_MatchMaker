@@ -170,8 +170,23 @@ button {
   margin: 100px;
   border-radius: 10px;
   border-color: #0e0d0d;
-  
+  color: #3b1717;
 
+}
+
+button:hover {
+  background-color: var(--color4);
+  color: var(--color3);
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: auto;
+  opacity: 0.9;
+  box-shadow: #31393b;
+  margin: 100px;
+  border-radius: 10px;
+  border-color: #0e0d0d;
+  color:aliceblue;
 }
 
 
