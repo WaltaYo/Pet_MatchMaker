@@ -85,6 +85,15 @@
   opacity: 1;
 }
 
+header h1 {
+  color: var(--color4);
+  font-size: 4em;
+  color: var(--color4);
+  text-align: center;
+  margin: 0;
+
+}
+
 /* background image and login panel */
 .bg-img {
     background-image: url("/images/petpaws.jpeg");

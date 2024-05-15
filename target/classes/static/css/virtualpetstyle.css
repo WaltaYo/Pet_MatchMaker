@@ -160,3 +160,12 @@
   max-width: 250px;
   padding-left: 45%;
 }
+
+.footer {
+  position: fixed;
+  grid-area: footer;
+  color: var(--color6);
+  padding: 10px; /* Add some padding */
+  width: 100%; /* Full width */
+  bottom: 0;
+}
