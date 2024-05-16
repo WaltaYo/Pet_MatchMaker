@@ -95,7 +95,7 @@
   
     background-image: url("/images/leo.jpg");
     background-size: contain;
-    height: 70vh;
+    height: 60vh;
     width: 99vw;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -137,7 +137,7 @@
 /* body{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 2fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr 2fr;
     grid-template-areas: 
       "left right"
       "paragraph paragraph"
@@ -168,4 +168,19 @@
   padding: 10px; /* Add some padding */
   width: 100%; /* Full width */
   bottom: 0;
+}
+
+h2{
+  text-align: center;
+}
+
+#petStatus{
+  text-align: center;
+}
+
+.gameButtons{
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  
 }
