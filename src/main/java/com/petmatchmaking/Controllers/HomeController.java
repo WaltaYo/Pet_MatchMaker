@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -84,7 +85,7 @@ public class HomeController extends BaseController {
     public String getQuiz(Model model, HttpServletRequest request, HttpServletResponse response) {
         // Checks user for a valid login
         if (!isUserLoggedIn(request)) {
-            return "redirect:/login"; // Make sure they login
+            return "redirect:/createlogin"; // Make sure they login
         }
 
         // Lets get the order of the next question
@@ -271,19 +272,36 @@ public class HomeController extends BaseController {
     public String login(@ModelAttribute("loginUser") UserDto login, HttpServletResponse response) {
         logout(response);
 
+        if(login.getUserId()==null){
+            return "redirect:error/?"+"User Id not found";
+        }
+
         String userName = login.getUserId();
         String userPassword = login.getPassword();
         UserModel userModel = userService.findByUserId(userName);
 
-        if (userModel.getUserId() != null && userModel.getPassword().equals(userPassword)) {
+        if( userModel != null && userModel.getUserId() != null && userModel.getPassword().equals(userPassword)){
             Cookie userIdCookie = new Cookie("Id", userModel.getId().toString());
             Cookie userNameCookie = new Cookie("username", userModel.getName());
             response.addCookie(userNameCookie);
             response.addCookie(userIdCookie);
             return "redirect:/";
         } else {
-            return "redirect:/login";
+            return "redirect:/error/1";
         }
+ 
+    }
+
+    @GetMapping("/error/{id}")
+    public String displayError(@PathVariable Long id, Model model)
+    {
+        String message = "error";
+        // model.addAttribute("message", message);
+        if(id==1l ){
+            message="invalid login";
+        }
+        model.addAttribute("message", message);
+        return "home/error";
 
     }
 }
