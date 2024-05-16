@@ -219,8 +219,13 @@ public class HomeController extends BaseController {
     public String loginUser(@ModelAttribute("loginUser") UserDto login, HttpServletResponse response) {
         logout(response);
         UserModel model = login.convertToModel();
-        if(model.getPassword().length()<6 || model.getUserId().length()<6){
-            return "redirect:/error/1";
+        if(model.getUserId().length()<6){
+            
+            return "redirect:/error/2";
+        }
+        if(model.getPassword().length()<6 ){
+            
+            return "redirect:/error/3";
         }
         else{
         userService.saveUser(model);
@@ -305,8 +310,15 @@ public class HomeController extends BaseController {
         if(id==1l ){
             message="invalid login";
         }
+        if(id==2l ){
+            message="username must be at least 6 characters ";
+        } 
+        if(id==3l ){
+            message="password must be at least 6 characters";
+        }
         model.addAttribute("message", message);
         return "home/error";
+
 
     }
 }
