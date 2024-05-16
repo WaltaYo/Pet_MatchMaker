@@ -19,7 +19,7 @@
           <li><a th:href="@{/quiz}">Quiz</a></li>
           <li><a href="/resource">Resources</a></li>
           <li><a href="/aboutus">About us</a></li>
-          <li><a href="/autologin">Auto Login</a></li>
+          <li><a href="/autologin">Guest Login</a></li>
           <li><a href="/virtualpet">Virtual Pet</a></li>
       </ul>
     </nav>
@@ -33,7 +33,7 @@
         <button onclick="startGame()">Start Game</button>
     </div>
     <br>
-    <div>
+    <div class="gif">
         <img id="gifImage" src="./images/kiss.gif" alt="GIF Image">
     </div>
     </br>
@@ -46,10 +46,12 @@
             <p>Play: <span id="play">100</span></p>
             <p>Health: <span id="health">100</span></p>
         </div>
+        <div class="gameButtons">
         <button onclick="feedPet()">Feed</button>
         <button onclick="playWithPet()">Play</button>
         <button onclick="waterPet()">Water</button>
         <button id="restartButton" onclick="restart()" style="display: none;">Restart</button>
+        </div>
     </div>
     <div id="counterContainer">
         <p id="petNameDeathCounter" style="display: none;"></p>

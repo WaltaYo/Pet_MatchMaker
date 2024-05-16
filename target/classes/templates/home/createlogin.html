@@ -6,9 +6,9 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/createlogin.css}" />
     <title>Login</title>
 </head>
-<body>
+
     <div class="bg-img">
-        
+      <h1>Create a User Login</h1>
         <div class="container">
         <nav class="menu-content">
           <ul class="navbar1">
@@ -16,30 +16,36 @@
             <li><a th:href="@{/quiz}">Quiz</a></li>
             <li><a href="/resource">Resources</a></li>
             <li><a href="/aboutus">About us</a></li>
+            <li><a href="/autologin">Guest Login</a></li>
             <li><a href="/virtualpet">Virtual Pet</a></li>
           </ul>
         </nav>
       </div>
-      <h1>Create a User Login</h1>
-<div class="create-box">
-    <form action="#" th:action="@{/createlogin}" th:object="${loginUser}" method="post">
-    <label>Enter your Name</label>
-    <input type="text" placeholder="Name" th:field="*{name}">
-    <label>Enter your Email</label>
-    <input type="text" placeholder="Email" th:field="*{email}">
-    <label>Choose a Username</label>
-    <li class="little">minimum 6 characters</li>
-    <input type="text" placeholder="Username" th:field="*{userId}">
-    <label>Choose a Unique Password</label>
-    <li class="little">minimum 6 characters</li>
-    <input type="password" placeholder="Password" th:field="*{password}">
     
-    
-    <button class="ccbtn" type="submit">Create Account</button>
-    
+
+    <body>
+    <div class="create-box">
+      <form action="#" th:action="@{/createlogin}" th:object="${loginUser}" method="post">
+        <label>Enter your Name</label>
+        <input type="text" placeholder="Name" th:field="*{name}">
+        <label>Enter your Email</label>
+        <input type="text" placeholder="Email" th:field="*{email}">
+        <label>Choose a Username</label>
+        <li class="little">minimum 6 characters</li>
+        <input type="text" placeholder="Username" th:field="*{userId}">
+        <label>Choose a Unique Password</label>
+        <li class="little">minimum 6 characters</li>
+        <input type="password" placeholder="Password" th:field="*{password}">
       
-</form>
-<a href="/"><button class="ccbtn">Cancel</button></a>
+      
+      <button class="ccbtn" type="submit">Create Account</button>  
+      <button type="button" onclick="window.location.href='/';">Cancel</button>
+  </form>
+  <br>
+  <div class="cancel">
+  
+</div>
+
 
 
 
