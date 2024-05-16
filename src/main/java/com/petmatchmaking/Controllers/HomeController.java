@@ -219,6 +219,10 @@ public class HomeController extends BaseController {
     public String loginUser(@ModelAttribute("loginUser") UserDto login, HttpServletResponse response) {
         logout(response);
         UserModel model = login.convertToModel();
+        if(model.getPassword().length()<6 || model.getUserId().length()<6){
+            return "redirect:/error/1";
+        }
+        else{
         userService.saveUser(model);
         // UserModel user = userService.findByUserId(userId);
         Cookie userIdCookie = new Cookie("Id", model.getId().toString());
@@ -229,6 +233,7 @@ public class HomeController extends BaseController {
         // }
         // return "redirect:/createlogin";
     }
+}
 
     @GetMapping("autologin")
     public String autoLogin(HttpServletResponse response) {
