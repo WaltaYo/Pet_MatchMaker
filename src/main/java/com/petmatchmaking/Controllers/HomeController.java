@@ -279,7 +279,7 @@ public class HomeController extends BaseController {
         logout(response);
 
         if(login.getUserId()==null){
-            return "redirect:/error/?"+"User Id not found";
+            return "redirect:error/?"+"User Id not found";
         }
 
         String userName = login.getUserId();
@@ -293,15 +293,20 @@ public class HomeController extends BaseController {
             response.addCookie(userIdCookie);
             return "redirect:/";
         } else {
-            return "redirect:/error/?"+"User Id not found";
+            return "redirect:/error/1";
         }
  
     }
 
-    @GetMapping("/error/{message}")
-    public String displayError(@PathVariable String message, Model model)
+    @GetMapping("/error/{id}")
+    public String displayError(@PathVariable Long id, Model model)
     {
-        model.addAttribute("messsage", message);
+        String message = "error";
+        // model.addAttribute("message", message);
+        if(id==1l ){
+            message="invalid login";
+        }
+        model.addAttribute("message", message);
         return "home/error";
 
     }

@@ -36,7 +36,7 @@
       </nav>
     </div>
       <div class="main-content">
-      <form action="#" class="container1" th:action="@{/login}" th:object="${loginUser}" method="post">
+      <form action="#" class="container1" th:action="@{/login}" th:object="${loginUser}" method="post" th:unless="${isLoggedIn}">
         <h1>Login</h1>
         <input type="hidden" th:field="*{id}" />
         <label><b>User Login</b></label>
@@ -81,7 +81,7 @@
       </p>
       <!-- <button class="regbtn">Register new user</button> -->
 
-      <a class="regbtn" th:href="@{/createlogin}"><button class="regbtn" >Register New User</button></a>
+      <a class="regbtn" th:unless="${isLoggedIn}" th:href="@{/createlogin}"><button class="regbtn" >Register New User</button></a>
       <a class="startbtn" th:href="@{/quiz}"><button class="startbtn">Start Your Quiz!</button></a> 
       
     </div>
