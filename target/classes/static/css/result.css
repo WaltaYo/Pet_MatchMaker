@@ -190,6 +190,8 @@ img {
 #gifImage{
   height: 50%;
   width: 50%;
+  margin-top: 50px;
+  border-radius: 10px;
 }
 /* text nexts to link photos explaining what they do  */
 p {
@@ -208,15 +210,25 @@ p {
 .hidden-row {
   display: none;
 }
-#hiddenText,
-#hiddenText3,
-#scoreboard {
+
+#hiddenText, #hiddenText3 {
   display: none;
 }
+
 #hiddenText2{
   display: none;
   font-size: 50px;
+  border-radius: 10px;
   background-color: red;
+  animation-name: rainbow;
+  animation-duration: 4s;
+}
+
+#scoreboard {
+  display: none;
+  font-size: 50px;
+  border-radius: 10px;
+  background-color: var(--color3);
   animation-name: rainbow;
   animation-duration: 4s;
 }

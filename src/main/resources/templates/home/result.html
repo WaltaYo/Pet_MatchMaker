@@ -41,15 +41,15 @@
   <table id="scoreboard">
     <thead>
       <tr>
-        <th>Score </th>
         <th>Pet </th>
+        <th>Points </th>
       </tr>
     </thead>
     <tbody>
       <tr th:each="score, iterStat : ${scoreboard}" th:if="${iterStat.count <= 3}">
 
-        <td th:text="${score.score}"></td>
         <td th:text="${score.petType}"></td>
+        <td th:text="${score.score}"></td>
 
       </tr>
     </tbody>
