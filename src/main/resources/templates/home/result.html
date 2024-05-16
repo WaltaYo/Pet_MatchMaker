@@ -38,22 +38,31 @@
     <H3 id="hiddenText3">See Your Recommended Pets Below!</h3>
  
 
-  <table id="scoreboard">
-    <thead>
-      <tr>
-        <th>Pet </th>
-        <th>Points </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr th:each="score, iterStat : ${scoreboard}" th:if="${iterStat.count <= 3}">
-
-        <td th:text="${score.petType}"></td>
-        <td th:text="${score.score}"></td>
-
-      </tr>
-    </tbody>
-  </table>
+      <table id="scoreboard">
+        <thead>
+            <tr>
+                <th></th> <!-- Blank header for the manually typed column -->
+               
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="hidden-row">
+                <td><img src="./images/number1.png" class="number-img" alt="1"></td>
+                <br>
+                <td th:text="${scoreboard[0].petType}"></td>
+            </tr>
+            <tr class="hidden-row">
+                <td><img src="./images/number2.png" class="number-img" alt="1"></td>
+                <br>
+                <td th:text="${scoreboard[1].petType}"></td>
+            </tr>
+            <tr class="hidden-row">
+                <td><img src="./images/number3.png" class="number-img" alt="1"></td>
+                <br>
+                <td th:text="${scoreboard[2].petType}"></td>
+            </tr>
+        </tbody>
+    </table>
 
 
 </body>
