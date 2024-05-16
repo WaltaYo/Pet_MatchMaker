@@ -184,3 +184,8 @@ h2{
   justify-content: center;
   
 }
+
+#counterContainer{
+  display: flex;
+  justify-content: center;
+}
