@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/ResourceStyle.css}" >
+    <link rel="stylesheet" type="text/css" th:href="@{/css/error.css}" >
     <title>Resource</title>
 </head>
 <body>
@@ -27,11 +27,14 @@
         </nav>
       </div>
 </header>
- <div class = "messageContainer" th:text = "${message}">
+<div class = "messageContainer">
+  <h1 th:text = "${message}"></h1>
+  <a class="homebtn" href="/"><button class="homebtn">Return Home</button></a> 
     
 
 
  </div>
+
 
 
 </body>
