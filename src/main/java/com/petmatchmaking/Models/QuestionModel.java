@@ -40,6 +40,7 @@ public class QuestionModel {
     public QuestionModel(String question, boolean manyAnswers) { 
         this.question = question;
         this.answers = new ArrayList<>();
+        this.manyAnswers = manyAnswers;
     }
 
     /**
