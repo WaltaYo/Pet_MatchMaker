@@ -5,59 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
     <title>PetMatchMaker</title>
-
-
-</head>
+  </head>
   
+  <div class="container">
+    
   <header>
     <div class="bg-img">
       <div class="header-container">
       <h1>Pet Match Maker</h1>
-        <div class="loggedbox" th:if="${isLoggedIn}">
-        <p>Welcome</p>
-        <p th:text="${userId}"></p>
-        <a th:href="@{/logout}"><button class="logbtn">Log Out</button></a>
-          </div>
-      <div class="loggedbox" th:unless="${isLoggedIn}">
-        <p>Logged Out</p>
+        <div class="loggedbox" >
+        <p th:if="${isLoggedIn}" class="welcome">Welcome</p >
+        <p th:if="${isLoggedIn}" class="username" th:text="${userId}"></p>
+        <a class="logbtn" th:if="${isLoggedIn}" th:href="@{/logout}">Log Out</a>
+        <p class="loggedout" th:unless="${isLoggedIn}"> Logged Out </p>
+          </div> 
+       <div class="loggedbox" >
+       
       </div>
     
     </div>
-      <div class="container">
+      <div class="containernav">
       <nav class="menu-content">
         <ul class="navbar1">
           <li><a href="/">Home</a></li>
           <li><a th:href="@{/quiz}">Quiz</a></li>
           <li><a href="/resource">Resources</a></li>
           <li><a href="/aboutus">About us</a></li>
-          <li><a href="/autologin">Auto Login</a></li>
+          <li><a href="/autologin">Guest Login</a></li>
           <li><a href="/virtualpet">Virtual Pet</a></li>
         </ul>
       </nav>
     </div>
       <div class="main-content">
       <form action="#" class="container1" th:action="@{/login}" th:object="${loginUser}" method="post" th:unless="${isLoggedIn}">
-        <h1>Login</h1>
+        <h2>Login</h2>
         <input type="hidden" th:field="*{id}" />
-        <label><b>User Login</b></label>
+        <label>User Login</label>
         <input type="text" placeholder="Username" th:field="*{userId}">
         <label>Password</label>
-        <input type="password" placeholder="Password" th:field="*{password}">
+        <input type="text" placeholder="Password" th:field="*{password}">
 
         <button type="submit" class="btn">Login</button>
               
-          <!-- need out add a log out button -->
-          <!--log out function-->
+        
 
       </form>
+      <div class="text">
       <p class="indextext"> <br> 
-        <br>
-        <br>
         Welcome to our Pet Matchmaking Quiz, where we strive to pair you with your perfect furry friend!
         <br>
-         This quiz is designed to delve into your lifestyle, preferences, and personality to find the ideal 
-         <br>
-         companion who will bring joy, companionship, and love into your life.
+        This quiz is designed to delve into your lifestyle, preferences, and personality to find the ideal 
+        <br>
+        companion who will bring joy, companionship, and love into your life.
         <br>
         Through a series of thoughtfully crafted questions, we'll explore your 
         <br>
@@ -81,23 +80,25 @@
       </p>
       <!-- <button class="regbtn">Register new user</button> -->
 
-      <a class="regbtn" th:unless="${isLoggedIn}" th:href="@{/createlogin}"><button class="regbtn" >Register New User</button></a>
-      <a class="startbtn" th:href="@{/quiz}"><button class="startbtn">Start Your Quiz!</button></a> 
       
     </div>
     
     
   </header>
 
+
+
   <body>
 
+
       <div class="body">
-       
-      </div>
+
+        <a class="regbtn" th:unless="${isLoggedIn}" th:href="@{/createlogin}"><button class="regbtn" >Register New User</button></a>
+      <a class="startbtn" th:href="@{/quiz}"><button class="startbtn">Start Your Quiz!</button></a> 
       
-    </div>
    
   </body>
-  
+  </div>
   <div th:replace="./fragments/footerfragment :: footer"></div>
+
 </html>
