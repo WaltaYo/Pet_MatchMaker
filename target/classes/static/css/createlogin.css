@@ -11,8 +11,6 @@
     --color6: #31393b;
     --color7: rgb(162, 159, 159);
   }
-
-  /* nav bar */
   @import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
   .navbar1 {
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -83,6 +81,8 @@
 
   /* Add styles to the form container */
   .container {
+    margin: 20px;
+    padding: 20px;
     background-color: white;
   }
   .main-content{
@@ -98,17 +98,6 @@
     margin-right: 20%;
     padding: 75px;
     background-color: white;
-  }
-
-  .bg-img {
-    background-image: url("/images/petpaws.jpeg");
-    background-size: contain;
-    height: 70vh;
-    width: 99vw;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
   }
   
     
@@ -154,9 +143,7 @@
     box-shadow: #31393b;
   }
 
-
-
-  button{
+  .ccbtn{
     background-color: var(--color4);
     color: white;
     padding: 16px 20px;
@@ -167,13 +154,6 @@
     box-shadow: #31393b;
     display: inline-block;
   }
-
-  button:hover {
-    background-color: #79aed3;
-     border: none;
-     cursor: pointer;
-     box-shadow: #31393b;
-   }
 
   body {
     background-color: var(--color1);
@@ -191,11 +171,9 @@
   }
   
   h1{
-    color: var(--color4);
     font-size: 3em;
     display: flex;
     justify-content: center;
-    
   }
   
   header{
@@ -216,18 +194,14 @@
 
   .create-box{
     display: flex;
-    position: fixed;
+    position: static;
     box-sizing: border-box;
     margin: 20px;
-    margin-left: 35%;
-    margin-right: 35%;
-    padding: 40px;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 20px;
     background-color: white;
     
-  }
-
-  .cancel{
-    width: 2fr;
   }
   @media(max-width: 376px) {
     main {

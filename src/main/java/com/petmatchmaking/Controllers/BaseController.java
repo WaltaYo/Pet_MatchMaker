@@ -4,7 +4,7 @@ import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class BaseController {
+public class BaseController { 
 
     protected long getUserId(HttpServletRequest request) {
         long result = 0;

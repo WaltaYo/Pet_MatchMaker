@@ -13,7 +13,7 @@ import com.petmatchmaking.Services.UserService;
 import jakarta.annotation.Resource;
 
 /**
- * Controller class that models the mapping of the auser services and
+ * Controller class that models the mapping of the user services and
  * repository
  */
 public class UserController extends BaseController{
